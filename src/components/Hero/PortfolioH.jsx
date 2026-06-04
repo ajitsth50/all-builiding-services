@@ -96,6 +96,33 @@ import allu2 from "../../assets/portfolio/allu2.jpg";
 import allu3 from "../../assets/portfolio/allu3.jpg";
 import allu4 from "../../assets/portfolio/allu4.jpg";
 
+import beamreplacement1 from "../../assets/portfolio/beamreplacement1.jpg";
+import beamreplacement2 from "../../assets/portfolio/beamreplacement2.jpg";
+import beamreplacement3 from "../../assets/portfolio/beamreplacement3.jpg";
+import beamreplacement4 from "../../assets/portfolio/beamreplacement4.jpg";
+import beamreplacement5 from "../../assets/portfolio/beamreplacement5.jpg";
+import beamreplacement6 from "../../assets/portfolio/beamreplacement6.jpg";
+import beamreplacement7 from "../../assets/portfolio/beamreplacement7.jpg";
+import beamreplacement8 from "../../assets/portfolio/beamreplacement8.jpg";
+import beamreplacement9 from "../../assets/portfolio/beamreplacement9.jpg";
+import beamreplacement10 from "../../assets/portfolio/beamreplacement10.jpg";
+import beamreplacement11 from "../../assets/portfolio/beamreplacement11.jpg";
+import beamreplacement12 from "../../assets/portfolio/beamreplacement12.jpg";
+import beamreplacement13 from "../../assets/portfolio/beamreplacement13.jpg";
+import beamreplacement14 from "../../assets/portfolio/beamreplacement14.jpg";
+import beamreplacement15 from "../../assets/portfolio/beamreplacement15.jpg";
+import beamreplacement16 from "../../assets/portfolio/beamreplacement16.jpg";
+import beamreplacement17 from "../../assets/portfolio/beamreplacement17.jpg";
+import beamreplacement18 from "../../assets/portfolio/beamreplacement18.jpg";
+import beamreplacement19 from "../../assets/portfolio/beamreplacement19.jpg";
+import beamreplacement20 from "../../assets/portfolio/beamreplacement20.jpg";
+import beamreplacement21 from "../../assets/portfolio/beamreplacement21.jpg";
+import beamreplacement22 from "../../assets/portfolio/beamreplacement22.jpg";
+import beamreplacement23 from "../../assets/portfolio/beamreplacement23.jpg";
+import beamreplacement24 from "../../assets/portfolio/beamreplacement24.jpg";
+import beamreplacement25 from "../../assets/portfolio/beamreplacement25.jpg";
+import beamreplacement26 from "../../assets/portfolio/beamreplacement26.jpg";
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -136,6 +163,38 @@ const projects = [
       timberfarming7,
       timberfarming8,
       timberfarming9,
+    ],
+  },
+  {
+    title: "Beam replacement",
+    category: "Carpentry",
+    images: [
+      beamreplacement1,
+      beamreplacement2,
+      beamreplacement3,
+      beamreplacement4,
+      beamreplacement5,
+      beamreplacement6,
+      beamreplacement7,
+      beamreplacement8,
+      beamreplacement9,
+      beamreplacement10,
+      beamreplacement11,
+      beamreplacement12,
+      beamreplacement13,
+      beamreplacement14,
+      beamreplacement15,
+      beamreplacement16,
+      beamreplacement17,
+      beamreplacement18,
+      beamreplacement19,
+      beamreplacement20,
+      beamreplacement21,
+      beamreplacement22,
+      beamreplacement23,
+      beamreplacement24,
+      beamreplacement25,
+      beamreplacement26,
     ],
   },
   {
