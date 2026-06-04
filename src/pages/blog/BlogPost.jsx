@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaDownload, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import compliancePdf from "../../assets/blog/ABPS-Compliance-Doc (1).pdf";
+import compliancePdf from "../../assets/blog/ABPS-Compliance-Doc (2).pdf";
 
 const BlogPost = () => {
   return (
