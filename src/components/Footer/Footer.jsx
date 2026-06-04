@@ -85,7 +85,7 @@ const Footer = () => {
             <div className="text-sky-200 space-y-3 text-sm font-source-sans min-w-0">
               <p className="flex items-start gap-3 min-w-0">
                 <FaPhone className="text-green-400 mt-1 flex-shrink-0" />
-                <span className="break-words">(02) 4202 6432</span>
+                <span className="break-words">02 7229 3522</span>
               </p>
 
               <p className="flex items-start gap-3 min-w-0">

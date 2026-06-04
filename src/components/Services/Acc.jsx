@@ -110,10 +110,10 @@ const Acc = () => {
         <p className="mt-10 text-center text-slate-700 text-sm sm:text-base">
           Still have questions?{" "}
           <a
-            href="tel:+61242026432"
+            href="tel:+61272293522"
             className="inline-flex items-center gap-2 underline decoration-teal-400 underline-offset-4 hover:text-slate-900"
           >
-            <FaPhoneAlt /> Call (02) 4202 6432
+            <FaPhoneAlt /> Call 02 7229 3522
           </a>{" "}
           or{" "}
           <a

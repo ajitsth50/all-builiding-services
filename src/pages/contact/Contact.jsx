@@ -125,7 +125,7 @@ const Contact = () => {
                 name="phone"
                 type="tel"
                 required
-                placeholder="(02) 4202 6432"
+                placeholder="02 7229 3522"
                 className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               />
             </div>

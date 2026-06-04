@@ -29,7 +29,7 @@ We pride ourselves on providing high-quality residential, commercial, and strata
 Need work performed?
 Get peace of mind with All Building & Property Services. Speak with our friendly team about your needs or get a quote today.
 Trusted by Sydney property owners
-No obligations: [Get a quote] | Call (02) 4202 6432 | [Email us]
+No obligations: [Get a quote] | Call 02 7229 3522 | [Email us]
 About Us
 Sydney’s remedial & maintenance specialists
 We deliver high-quality residential, commercial, and strata services across Sydney, including remedial repairs, leak investigations, waterproofing, plumbing, painting, electrical, handyman works, and renovations. Reliable workmanship, timely delivery, and full insurance for your peace of mind.
@@ -76,7 +76,7 @@ Quick Links
 
 Contact
 
-Phone: (02) 4202 6432
+Phone: 02 7229 3522
 Email: admin@allbuildingservices.com.au
 Address: 81–83 Campbell Street, Surry Hills NSW 2010, Australia
 ABN: 49 645 563 597 | ACN: 645 563 597

@@ -53,12 +53,12 @@ const JoinNow = () => {
               </Link>
 
               <a
-                href="tel:+61242026432"
+                href="tel:+61272293522"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-sky-300 bg-white px-6 py-3 text-base font-semibold text-gray-800 shadow-sm transition hover:bg-sky-50"
                 aria-label="Call All Building & Property Services"
               >
                 <FaPhoneAlt />
-                (02) 4202 6432
+                02 7229 3522
               </a>
 
               <a
