@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -12,6 +13,38 @@ const DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=Axis%20House%2C%2081-83%20Campbell%20St%2C%20Surry%20Hills%20NSW%202010%2C%20Australia";
 
 const Contact = () => {
+  const [status, setStatus] = useState("idle");
+  const [notice, setNotice] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("sending");
+    setNotice("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send enquiry");
+      }
+
+      form.reset();
+      setStatus("sent");
+      setNotice("Thanks. Your enquiry has been sent.");
+    } catch {
+      setStatus("error");
+      setNotice("Your message could not be sent. Please call or email us directly.");
+    }
+  };
+
   return (
     <section id="contact" className="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-slate-900">
       <Navbar />
@@ -45,11 +78,19 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="bg-white rounded-2xl shadow-xl ring-1 ring-black/5 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
         >
-          <form className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <input
+              type="text"
+              name="company"
+              tabIndex="-1"
+              autoComplete="off"
+              className="hidden"
+            />
             {/* Name */}
             <div>
               <label className="block text-sm font-semibold text-slate-800">First Name *</label>
               <input
+                name="firstName"
                 type="text"
                 required
                 placeholder="First"
@@ -59,6 +100,7 @@ const Contact = () => {
             <div>
               <label className="block text-sm font-semibold text-slate-800">Last Name *</label>
               <input
+                name="lastName"
                 type="text"
                 required
                 placeholder="Last"
@@ -70,6 +112,7 @@ const Contact = () => {
             <div>
               <label className="block text-sm font-semibold text-slate-800">Email *</label>
               <input
+                name="email"
                 type="email"
                 required
                 placeholder="you@example.com"
@@ -79,6 +122,7 @@ const Contact = () => {
             <div>
               <label className="block text-sm font-semibold text-slate-800">Phone *</label>
               <input
+                name="phone"
                 type="tel"
                 required
                 placeholder="(02) 4202 6432"
@@ -90,6 +134,7 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <label className="block text-sm font-semibold text-slate-800">Subject *</label>
               <input
+                name="subject"
                 type="text"
                 required
                 placeholder="e.g. Waterproofing quote"
@@ -101,6 +146,7 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <label className="block text-sm font-semibold text-slate-800">Message *</label>
               <textarea
+                name="message"
                 rows={5}
                 required
                 placeholder="Please leave your message"
@@ -112,11 +158,23 @@ const Contact = () => {
             <div className="sm:col-span-2">
               <button
                 type="submit"
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-3 text-white font-semibold hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+                disabled={status === "sending"}
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-3 text-white font-semibold hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 disabled:cursor-not-allowed disabled:bg-slate-400"
               >
-                Submit
+                {status === "sending" ? "Sending..." : "Submit"}
               </button>
             </div>
+            {notice && (
+              <p
+                className={`sm:col-span-2 rounded-lg px-4 py-3 text-sm font-medium ${
+                  status === "sent"
+                    ? "bg-emerald-50 text-emerald-800"
+                    : "bg-red-50 text-red-800"
+                }`}
+              >
+                {notice}
+              </p>
+            )}
           </form>
         </motion.div>
       </div>
