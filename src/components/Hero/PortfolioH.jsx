@@ -123,6 +123,20 @@ import beamreplacement24 from "../../assets/portfolio/beamreplacement24.jpg";
 import beamreplacement25 from "../../assets/portfolio/beamreplacement25.jpg";
 import beamreplacement26 from "../../assets/portfolio/beamreplacement26.jpg";
 
+import drivewayconcreting1 from "../../assets/portfolio/drivewayconcreting1.jpg";
+import drivewayconcreting2 from "../../assets/portfolio/drivewayconcreting2.jpg";
+import drivewayconcreting3 from "../../assets/portfolio/drivewayconcreting3.jpg";
+import drivewayconcreting4 from "../../assets/portfolio/drivewayconcreting4.jpg";
+import drivewayconcreting5 from "../../assets/portfolio/drivewayconcreting5.jpg";
+import drivewayconcreting6 from "../../assets/portfolio/drivewayconcreting6.jpg";
+import drivewayconcreting7 from "../../assets/portfolio/drivewayconcreting7.jpg";
+import drivewayconcreting8 from "../../assets/portfolio/drivewayconcreting8.jpg";
+import drivewayconcreting9 from "../../assets/portfolio/drivewayconcreting9.jpg";
+import drivewayconcreting10 from "../../assets/portfolio/drivewayconcreting10.jpg";
+import drivewayconcreting11 from "../../assets/portfolio/drivewayconcreting11.jpg";
+import drivewayconcreting12 from "../../assets/portfolio/drivewayconcreting12.jpg";
+import drivewayconcreting13 from "../../assets/portfolio/drivewayconcreting13.jpg";
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -206,6 +220,25 @@ const projects = [
     title: "Pebblecrete",
     category: "Paving & Groundworks",
     images: [peeblecrete1, peeblecrete2, peeblecrete3, peeblecrete4, peeblecrete5, peeblecrete6, peeblecrete7],
+  },
+  {
+    title: "Driveway concreting",
+    category: "Concreting",
+    images: [
+      drivewayconcreting1,
+      drivewayconcreting2,
+      drivewayconcreting3,
+      drivewayconcreting4,
+      drivewayconcreting5,
+      drivewayconcreting6,
+      drivewayconcreting7,
+      drivewayconcreting8,
+      drivewayconcreting9,
+      drivewayconcreting10,
+      drivewayconcreting11,
+      drivewayconcreting12,
+      drivewayconcreting13,
+    ],
   },
   {
     title: "Painting",
