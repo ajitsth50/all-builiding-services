@@ -8,7 +8,7 @@ import Footer from "./components/Footer/Footer";
 import AboutPage from "./pages/about/AboutPage";  // Matching the exact file name
 import Contact from './pages/contact/Contact'
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import Router and related components
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom"; // Import Router and related components
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import ServicePage from "./pages/services/ServicePage";
@@ -55,6 +55,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicePage />} />
           <Route path="/projects" element={<PortfolioPage />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
           
 
           <Route path="/contact" element={<Contact />} />
