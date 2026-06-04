@@ -8,9 +8,11 @@ const fade = (d = 0) => ({
   animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut", delay: d } },
 });
 
-const ADDRESS_TEXT = "Axis House, 81–83 Campbell St, Surry Hills NSW 2010, Australia";
+const ADDRESS_TEXT = "Level 1, 63-73 Ann Street, Surry Hills, NSW 2010";
 const DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Axis%20House%2C%2081-83%20Campbell%20St%2C%20Surry%20Hills%20NSW%202010%2C%20Australia";
+  "https://www.google.com/maps/dir/?api=1&destination=Level%201%2C%2063-73%20Ann%20Street%2C%20Surry%20Hills%2C%20NSW%202010";
+const MAP_URL =
+  "https://www.google.com/maps?q=Level%201%2C%2063-73%20Ann%20Street%2C%20Surry%20Hills%2C%20NSW%202010&output=embed";
 
 const Contact = () => {
   const [status, setStatus] = useState("idle");
@@ -197,7 +199,7 @@ const Contact = () => {
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
                 title="All Building & Property Services Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.358916467763!2d151.20728767602807!3d-33.880409073222154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae22a1f8fc0f%3A0x3b3560c3369193c0!2sAxis%20House%2C%2081-83%20Campbell%20St%2C%20Surry%20Hills%20NSW%202010%2C%20Australia!5e0!3m2!1sen!2suk!4v1761314809948!5m2!1sen!2suk"
+                src={MAP_URL}
                 style={{ border: 0, filter: "grayscale(0.1) contrast(1.05)" }}
               />
             </div>

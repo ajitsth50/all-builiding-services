@@ -78,7 +78,7 @@ Contact
 
 Phone: 02 7229 3522
 Email: admin@allbuildingservices.com.au
-Address: 81–83 Campbell Street, Surry Hills NSW 2010, Australia
+Address: Level 1, 63-73 Ann Street, Surry Hills, NSW 2010
 ABN: 49 645 563 597 | ACN: 645 563 597
 
 © 2025 All Building & Property Services.

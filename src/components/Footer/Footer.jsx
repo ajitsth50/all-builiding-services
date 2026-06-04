@@ -106,7 +106,7 @@ const Footer = () => {
               <p className="flex items-start gap-3 min-w-0">
                 <FaMapMarkerAlt className="text-green-400 mt-1 flex-shrink-0" />
                 <span className="break-words leading-relaxed">
-                  81–83 Campbell Street, Surry Hills NSW 2010, Australia
+                  Level 1, 63-73 Ann Street, Surry Hills, NSW 2010
                 </span>
               </p>
             </div>

@@ -73,7 +73,7 @@ const JoinNow = () => {
 
             {/* Trust line */}
             <p className="mt-5 text-center text-xs text-gray-600 font-source-sans">
-              ABN 49 645 563 597 • ACN 645 563 597 • 81–83 Campbell St, Surry Hills NSW 2010
+              ABN 49 645 563 597 • ACN 645 563 597 • Level 1, 63-73 Ann Street, Surry Hills, NSW 2010
             </p>
           </motion.div>
         </div>

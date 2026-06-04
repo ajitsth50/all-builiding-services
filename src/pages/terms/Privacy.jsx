@@ -172,7 +172,7 @@ const Privacy = () => {
               </div>
               <p className="mt-2 text-gray-600">
                 All Building &amp; Property Services Pty Ltd<br />
-                81–83 Campbell Street, Surry Hills NSW 2010, Australia
+                Level 1, 63-73 Ann Street, Surry Hills, NSW 2010
               </p>
             </div>
           </section>
