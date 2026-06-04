@@ -96,6 +96,23 @@ import allu2 from "../../assets/portfolio/allu2.jpg";
 import allu3 from "../../assets/portfolio/allu3.jpg";
 import allu4 from "../../assets/portfolio/allu4.jpg";
 
+import aluminiumfence1 from "../../assets/portfolio/aluminiumfence1.jpg";
+import aluminiumfence2 from "../../assets/portfolio/aluminiumfence2.jpg";
+import aluminiumfence3 from "../../assets/portfolio/aluminiumfence3.jpg";
+import aluminiumfence4 from "../../assets/portfolio/aluminiumfence4.jpg";
+import aluminiumfence5 from "../../assets/portfolio/aluminiumfence5.jpg";
+import aluminiumfence6 from "../../assets/portfolio/aluminiumfence6.jpg";
+import aluminiumfence7 from "../../assets/portfolio/aluminiumfence7.jpg";
+import aluminiumfence8 from "../../assets/portfolio/aluminiumfence8.jpg";
+import aluminiumfence9 from "../../assets/portfolio/aluminiumfence9.jpg";
+import aluminiumfence10 from "../../assets/portfolio/aluminiumfence10.jpg";
+import aluminiumfence11 from "../../assets/portfolio/aluminiumfence11.jpg";
+import aluminiumfence12 from "../../assets/portfolio/aluminiumfence12.jpg";
+import aluminiumfence13 from "../../assets/portfolio/aluminiumfence13.jpg";
+import aluminiumfence14 from "../../assets/portfolio/aluminiumfence14.jpg";
+import aluminiumfence15 from "../../assets/portfolio/aluminiumfence15.jpg";
+import aluminiumfence16 from "../../assets/portfolio/aluminiumfence16.jpg";
+
 import beamreplacement1 from "../../assets/portfolio/beamreplacement1.jpg";
 import beamreplacement2 from "../../assets/portfolio/beamreplacement2.jpg";
 import beamreplacement3 from "../../assets/portfolio/beamreplacement3.jpg";
@@ -287,7 +304,28 @@ const projects = [
   {
     title: "Aluminium Fence",
     category: "Fencing",
-    images: [allu1, allu2, allu3, allu4],
+    images: [
+      allu1,
+      allu2,
+      allu3,
+      allu4,
+      aluminiumfence1,
+      aluminiumfence2,
+      aluminiumfence3,
+      aluminiumfence4,
+      aluminiumfence5,
+      aluminiumfence6,
+      aluminiumfence7,
+      aluminiumfence8,
+      aluminiumfence9,
+      aluminiumfence10,
+      aluminiumfence11,
+      aluminiumfence12,
+      aluminiumfence13,
+      aluminiumfence14,
+      aluminiumfence15,
+      aluminiumfence16,
+    ],
   },
 ];
 
