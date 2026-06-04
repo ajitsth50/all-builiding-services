@@ -1,0 +1,40 @@
+.hero-swiper,
+.hero-slide {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+ 
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 1rem;
+}
+
+.cta-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #fff;
+}
+
+.cta-btn:hover {
+  background-color: #fff;
+  color: #000;
+}

@@ -1,0 +1,171 @@
+import { motion } from "framer-motion";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+
+const fade = (d = 0) => ({
+  initial: { opacity: 0, y: 18 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut", delay: d } },
+});
+
+const ADDRESS_TEXT = "Axis House, 81–83 Campbell St, Surry Hills NSW 2010, Australia";
+const DIRECTIONS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=Axis%20House%2C%2081-83%20Campbell%20St%2C%20Surry%20Hills%20NSW%202010%2C%20Australia";
+
+const Contact = () => {
+  return (
+    <section id="contact" className="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-slate-900">
+      <Navbar />
+
+      {/* Header */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-28 pb-6">
+        <motion.div
+          variants={fade(0.05)}
+          initial="initial"
+          animate="animate"
+          className="text-center max-w-3xl mx-auto"
+        >
+          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-teal-700">
+            Contact us
+          </p>
+          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold text-blue-900">
+            Get in touch
+          </h1>
+          <p className="mt-3 text-base sm:text-lg text-slate-700">
+            We’re available 24/7 for urgent works and quotes.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Form Card */}
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-14">
+        <motion.div
+          variants={fade(0.1)}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          className="bg-white rounded-2xl shadow-xl ring-1 ring-black/5 p-6 sm:p-8 lg:p-10 max-w-3xl mx-auto"
+        >
+          <form className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Name */}
+            <div>
+              <label className="block text-sm font-semibold text-slate-800">First Name *</label>
+              <input
+                type="text"
+                required
+                placeholder="First"
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-slate-800">Last Name *</label>
+              <input
+                type="text"
+                required
+                placeholder="Last"
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+
+            {/* Email / Phone */}
+            <div>
+              <label className="block text-sm font-semibold text-slate-800">Email *</label>
+              <input
+                type="email"
+                required
+                placeholder="you@example.com"
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-slate-800">Phone *</label>
+              <input
+                type="tel"
+                required
+                placeholder="(02) 4202 6432"
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+
+            {/* Subject */}
+            <div className="sm:col-span-2">
+              <label className="block text-sm font-semibold text-slate-800">Subject *</label>
+              <input
+                type="text"
+                required
+                placeholder="e.g. Waterproofing quote"
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+
+            {/* Message */}
+            <div className="sm:col-span-2">
+              <label className="block text-sm font-semibold text-slate-800">Message *</label>
+              <textarea
+                rows={5}
+                required
+                placeholder="Please leave your message"
+                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              />
+            </div>
+
+            {/* Submit */}
+            <div className="sm:col-span-2">
+              <button
+                type="submit"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-3 text-white font-semibold hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </motion.div>
+      </div>
+
+      {/* Map + Directions */}
+      <div className="w-full">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+          <motion.div
+            variants={fade(0.1)}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+            className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5"
+          >
+            {/* Aspect container */}
+            <div className="relative w-full" style={{ paddingTop: "48%" }}>
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="All Building & Property Services Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.358916467763!2d151.20728767602807!3d-33.880409073222154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae22a1f8fc0f%3A0x3b3560c3369193c0!2sAxis%20House%2C%2081-83%20Campbell%20St%2C%20Surry%20Hills%20NSW%202010%2C%20Australia!5e0!3m2!1sen!2suk!4v1761314809948!5m2!1sen!2suk"
+                style={{ border: 0, filter: "grayscale(0.1) contrast(1.05)" }}
+              />
+            </div>
+
+            {/* Overlay info bar */}
+            <div className="absolute left-0 right-0 bottom-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-4 sm:p-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+              <div className="text-white">
+                <p className="text-xs uppercase tracking-widest text-teal-200">Our Location</p>
+                <p className="text-sm sm:text-base font-medium">{ADDRESS_TEXT}</p>
+              </div>
+              <a
+                href={DIRECTIONS_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 shadow"
+              >
+                Get Directions
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <Footer />
+    </section>
+  );
+};
+
+export default Contact;
