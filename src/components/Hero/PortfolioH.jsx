@@ -154,6 +154,27 @@ import drivewayconcreting11 from "../../assets/portfolio/drivewayconcreting11.jp
 import drivewayconcreting12 from "../../assets/portfolio/drivewayconcreting12.jpg";
 import drivewayconcreting13 from "../../assets/portfolio/drivewayconcreting13.jpg";
 
+import brickwallcrackstitch1 from "../../assets/portfolio/brickwallcrackstitch1.jpg";
+import brickwallcrackstitch2 from "../../assets/portfolio/brickwallcrackstitch2.jpg";
+import brickwallcrackstitch3 from "../../assets/portfolio/brickwallcrackstitch3.jpg";
+import brickwallcrackstitch4 from "../../assets/portfolio/brickwallcrackstitch4.jpg";
+import brickwallcrackstitch5 from "../../assets/portfolio/brickwallcrackstitch5.jpg";
+import brickwallcrackstitch6 from "../../assets/portfolio/brickwallcrackstitch6.jpg";
+import brickwallcrackstitch7 from "../../assets/portfolio/brickwallcrackstitch7.jpg";
+import brickwallcrackstitch8 from "../../assets/portfolio/brickwallcrackstitch8.jpg";
+import brickwallcrackstitch9 from "../../assets/portfolio/brickwallcrackstitch9.jpg";
+import brickwallcrackstitch10 from "../../assets/portfolio/brickwallcrackstitch10.jpg";
+import brickwallcrackstitch11 from "../../assets/portfolio/brickwallcrackstitch11.jpg";
+import brickwallcrackstitch12 from "../../assets/portfolio/brickwallcrackstitch12.jpg";
+import brickwallcrackstitch13 from "../../assets/portfolio/brickwallcrackstitch13.jpg";
+import brickwallcrackstitch14 from "../../assets/portfolio/brickwallcrackstitch14.jpg";
+import brickwallcrackstitch15 from "../../assets/portfolio/brickwallcrackstitch15.jpg";
+import brickwallcrackstitch16 from "../../assets/portfolio/brickwallcrackstitch16.jpg";
+import brickwallcrackstitch17 from "../../assets/portfolio/brickwallcrackstitch17.jpg";
+import brickwallcrackstitch18 from "../../assets/portfolio/brickwallcrackstitch18.jpg";
+import brickwallcrackstitch19 from "../../assets/portfolio/brickwallcrackstitch19.jpg";
+import brickwallcrackstitch20 from "../../assets/portfolio/brickwallcrackstitch20.jpg";
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -255,6 +276,32 @@ const projects = [
       drivewayconcreting11,
       drivewayconcreting12,
       drivewayconcreting13,
+    ],
+  },
+  {
+    title: "Brick Wall Crack Stitch",
+    category: "Remedial",
+    images: [
+      brickwallcrackstitch1,
+      brickwallcrackstitch2,
+      brickwallcrackstitch3,
+      brickwallcrackstitch4,
+      brickwallcrackstitch5,
+      brickwallcrackstitch6,
+      brickwallcrackstitch7,
+      brickwallcrackstitch8,
+      brickwallcrackstitch9,
+      brickwallcrackstitch10,
+      brickwallcrackstitch11,
+      brickwallcrackstitch12,
+      brickwallcrackstitch13,
+      brickwallcrackstitch14,
+      brickwallcrackstitch15,
+      brickwallcrackstitch16,
+      brickwallcrackstitch17,
+      brickwallcrackstitch18,
+      brickwallcrackstitch19,
+      brickwallcrackstitch20,
     ],
   },
   {
