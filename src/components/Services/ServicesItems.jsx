@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -173,7 +174,7 @@ const ServiceItems = () => {
               } items-center gap-10 lg:gap-20 text-left group`}
             >
               <img
-                src={service.image}
+                src={service.image.src}
                 alt={service.title}
                 className="w-full lg:w-[600px] h-[400px] object-cover object-center rounded-3xl shadow-xl group-hover:scale-105 transition-transform duration-500 border border-gray-200"
               />

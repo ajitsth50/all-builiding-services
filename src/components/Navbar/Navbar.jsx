@@ -1,8 +1,10 @@
+"use client";
 import React, { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import logo from '../../assets/logo.png';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -28,14 +30,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
   const [formData, setFormData] = useState({});
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setMenuOpen(false);
     setServicesOpen(false);
-  }, [location.pathname]);
+  }, [pathname]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -72,8 +74,8 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           className="container mx-auto px-6 py-4 flex justify-between items-center h-20"
         >
-          <Link to="/" className="flex items-center h-full">
-            <img src={logo} alt="All Building and Property Services logo" className="h-[100px] w-auto object-contain" />
+          <Link href="/" className="flex items-center h-full">
+            <img src={logo.src} alt="All Building and Property Services logo" className="h-[100px] w-auto object-contain" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-6">
@@ -87,7 +89,7 @@ const Navbar = () => {
                     <ul className="absolute top-full left-0 mt-2 w-56 bg-white border border-gray-200 shadow-lg rounded-md opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-opacity duration-300 z-50">
                       {menu.dropdown.map((item, idx) => (
                         <li key={idx}>
-                          <Link to={item.path} className="block px-5 py-3 text-sm text-gray-700 hover:bg-green-50 hover:border-l-2 hover:border-green-400 transition font-source-sans">
+                          <Link href={item.path} className="block px-5 py-3 text-sm text-gray-700 hover:bg-green-50 hover:border-l-2 hover:border-green-400 transition font-source-sans">
                             {item.title}
                           </Link>
                         </li>
@@ -97,9 +99,9 @@ const Navbar = () => {
                 ) : (
                   <li key={menu.id}>
                     <Link
-                      to={menu.path}
+                      href={menu.path}
                       className={`py-2 px-4 rounded-md transition duration-300 ${
-                        location.pathname === menu.path ? 'border-b-2 border-green-400 font-semibold' : 'text-gray-800 hover:border-b-2 hover:border-green-400'
+                        pathname === menu.path ? 'border-b-2 border-green-400 font-semibold' : 'text-gray-800 hover:border-b-2 hover:border-green-400'
                       } font-source-sans`}
                     >
                       {menu.title}
@@ -161,7 +163,7 @@ const Navbar = () => {
                             {menu.dropdown.map((item, idx) => (
                               <li key={idx}>
                                 <Link
-                                  to={item.path}
+                                  href={item.path}
                                   className="block px-4 py-2 hover:bg-sky-500 hover:text-white transition font-source-sans"
                                   onClick={() => setMenuOpen(false)}
                                 >
@@ -176,7 +178,7 @@ const Navbar = () => {
                   ) : (
                     <li key={menu.id}>
                       <Link
-                        to={menu.path}
+                        href={menu.path}
                         className="block w-full py-2 text-center hover:text-sky-500 transition font-source-sans"
                         onClick={() => setMenuOpen(false)}
                       >

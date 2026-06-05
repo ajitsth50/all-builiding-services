@@ -1,14 +1,13 @@
 🏗️ All Building & Property Services Website
-A modern, fast, and responsive website for Sydney-based remedial building and property maintenance specialists. Built with React and Vite for optimal performance, it showcases services, projects, and client trust while driving inquiries through intuitive CTAs.
+A modern, fast, and responsive website for Sydney-based remedial building and property maintenance specialists. Built with Next.js and React, it statically renders the main website pages for stronger SEO while keeping the contact API on Vercel.
 Hero Preview 
 🚀 Tech Stack
 
-React — Dynamic, component-based UI
-Vite — Fast bundling and HMR
-React Router — Client-side routing
+Next.js — Static-rendered pages and Vercel routing
+React — Component-based UI
 Tailwind CSS — Responsive, utility-first styling
 ESLint — Code linting and quality
-Deployed on — Vercel/Netlify (CI/CD ready)
+Deployed on — Vercel
 
 📦 Features
 
@@ -90,15 +89,19 @@ cd all-building-property-services-website
 Bashnpm install
 3. Run Development Server
 Bashnpm run dev
-Open http://localhost:5173 to view.
+Open http://localhost:3000 to view.
 4. Build for Production
 Bashnpm run build
-Output in /dist — deploy to Vercel, Netlify, or your server.
+Next.js generates the production build in /.next for Vercel.
 5. Customize
 
 Update content in src/components/ (e.g., Hero.jsx, Services.jsx)
 Replace placeholders with real images/stats
-Add env vars for forms (e.g., Web3Forms API key)
+Add env vars for the contact API:
+
+RESEND_API_KEY
+CONTACT_TO_EMAIL
+CONTACT_FROM_EMAIL
 
 🤝 Contributing
 Fork, branch, PR with descriptive commits. Focus on accessibility, performance, and mobile-first design.

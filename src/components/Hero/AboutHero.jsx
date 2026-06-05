@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Navbar from "../Navbar/Navbar";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import heroVideo from "../../assets/hero.mp4";
+
+const heroVideo = "/assets/hero.mp4";
 
 const fade = (d = 0) => ({
   hidden: { opacity: 0, y: 16 },
@@ -84,7 +86,7 @@ const AboutHero = () => {
               className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
             >
               <Link
-                to="/services"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-teal-600 px-6 py-3 text-base font-semibold text-white shadow-sm ring-1 ring-inset ring-teal-600/20 transition hover:bg-teal-700"
               >
                 View services
@@ -92,7 +94,7 @@ const AboutHero = () => {
               </Link>
 
               <Link
-                to="/contact"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:bg-slate-50"
               >
                 Get a quote

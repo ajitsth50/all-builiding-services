@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   FaMapMarkerAlt,
@@ -8,7 +9,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -42,16 +43,16 @@ const Footer = () => {
 
               <ul className="space-y-2 text-sky-200 text-sm font-source-sans">
                 <li className="hover:text-green-300 transition-colors">
-                  <Link to="/about">About</Link>
+                  <Link href="/about">About</Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors">
-                  <Link to="/projects">Projects</Link>
+                  <Link href="/projects">Projects</Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors">
-                  <Link to="/services">Services</Link>
+                  <Link href="/services">Services</Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors">
-                  <Link to="/contact">Contact</Link>
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
@@ -63,15 +64,15 @@ const Footer = () => {
 
               <ul className="space-y-2 text-sky-200 text-sm font-source-sans">
                 <li className="hover:text-green-300 transition-colors break-words">
-                  <Link to="/blog">Blog</Link>
+                  <Link href="/blog">Blog</Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors break-words">
-                  <Link to="/privacy">
+                  <Link href="/privacy">
                     Privacy Policy – All Building and Property Services Pty Ltd
                   </Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors break-words">
-                  <Link to="/terms">Terms & Conditions – Quotations</Link>
+                  <Link href="/terms">Terms & Conditions – Quotations</Link>
                 </li>
               </ul>
             </div>

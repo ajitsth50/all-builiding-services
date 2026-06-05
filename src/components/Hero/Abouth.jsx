@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -66,7 +67,7 @@ const Abouth = () => {
               className="flex justify-center items-center px-4 py-2 md:px-6 md:py-3 bg-gray-50 rounded-xl shadow-sm hover:shadow-md hover:bg-sky-50 transition-all duration-300 min-w-[120px] md:min-w-[150px]"
             >
               <img
-                src={client.src}
+                src={client.src.src}
                 alt={client.alt}
                 className="h-10 md:h-14 w-auto object-contain"
               />

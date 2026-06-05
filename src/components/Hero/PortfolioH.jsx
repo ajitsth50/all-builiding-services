@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar/Navbar";
@@ -418,7 +419,7 @@ const ProjectCard = ({ project }) => {
           {validImages.map((img, i) => (
             <div key={i} className="basis-full shrink-0 h-full w-full">
               <img
-                src={img}
+                src={img.src}
                 alt={`${project.title} ${i + 1}`}
                 className="h-full w-full object-cover"
                 loading={i === 0 ? "eager" : "lazy"}

@@ -1,6 +1,7 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   FaTools,
   FaShieldAlt,
@@ -224,13 +225,13 @@ const Servicehero = () => {
                 {/* CTAs pinned bottom */}
                 <div className="mt-auto pt-6 flex items-center gap-3">
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="inline-flex items-center justify-center rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-teal-600/20 transition hover:bg-teal-700"
                   >
                     Get a quote
                   </Link>
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
                   >
                     Ask a question

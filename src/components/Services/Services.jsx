@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import remedialImg from "../../assets/services/remedial-services.jpg"
 import leakImg from "../../assets/services/leak-detection.png";
@@ -88,7 +89,7 @@ const Services = () => {
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={service.image}
+                  src={service.image.src}
                   alt={service.title}
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
@@ -118,7 +119,7 @@ const Services = () => {
 
         <div className="text-center mt-12">
           <Link
-            to="/services"
+            href="/services"
             className="inline-flex items-center justify-center rounded-full bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-md ring-1 ring-inset ring-teal-600/20 transition hover:bg-teal-700"
           >
             View All Services

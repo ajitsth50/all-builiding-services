@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Navbar from "../Navbar/Navbar";
-import heroVideo from "../../assets/home.mp4"
 import "./HeroSlider.css";
+
+const heroVideo = "/assets/home.mp4";
 
 const Hero = () => {
   return (
@@ -38,7 +40,7 @@ const Hero = () => {
             industry-leading prices.
           </p>
 
-          <Link to="/services">
+          <Link href="/services">
   <button className="bg-sky-500 hover:bg-green-300 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 ease-in-out group inline-flex items-center space-x-2 shadow-lg hover:shadow-xl">
     <span>View Services</span>
     <IoIosArrowRoundForward className="text-xl group-hover:translate-x-2 group-hover:-rotate-45 duration-300" />

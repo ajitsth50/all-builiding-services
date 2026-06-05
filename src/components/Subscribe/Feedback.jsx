@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -230,7 +231,7 @@ const Feedback = () => {
               >
                 <div className="bg-white border border-sky-100 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition-shadow duration-300 w-full flex flex-col">
                   <img
-                    src={testimonial.image}
+                    src={testimonial.image.src}
                     alt={`${testimonial.name} feedback`}
                     className="w-full h-40 sm:h-44 md:h-48 object-cover rounded-lg mb-3 md:mb-4"
                   />

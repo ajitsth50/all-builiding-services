@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import choose from "../../assets/choose.jpg";
@@ -173,7 +174,7 @@ const Banner2 = () => {
   <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-md">
     <img
       className="w-full h-[500px] object-cover"  
-      src={choose}
+      src={choose.src}
       alt="Remedial repairs and maintenance in progress"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />

@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { FaPhoneAlt, FaEnvelope, FaFileSignature } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -44,7 +45,7 @@ const JoinNow = () => {
             {/* CTA Row */}
             <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
               <Link
-                to="/contact"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-sm ring-1 ring-inset ring-sky-600/20 transition hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
                 aria-label="Get a quote"
               >
