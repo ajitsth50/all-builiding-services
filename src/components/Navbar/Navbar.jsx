@@ -73,7 +73,7 @@ const Navbar = () => {
           className="container mx-auto px-6 py-4 flex justify-between items-center h-20"
         >
           <Link to="/" className="flex items-center h-full">
-            <img src={logo} alt="Logo" className="h-[100px] w-auto object-contain" />
+            <img src={logo} alt="All Building and Property Services logo" className="h-[100px] w-auto object-contain" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-6">

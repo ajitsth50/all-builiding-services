@@ -2,6 +2,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Seo from "../../components/Seo/Seo";
 
 const Check = ({ className = "h-6 w-6 text-blue-500" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -29,6 +30,11 @@ const Mail = ({ className = "h-5 w-5" }) => (
 const Privacy = () => {
   return (
     <section className="bg-gray-50 min-h-screen">
+      <Seo
+        title="Privacy Policy"
+        description="Privacy Policy for All Building & Property Services Pty Ltd, covering website enquiries, quote requests and service-related information handling."
+        path="/privacy"
+      />
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-20">
         <div className="bg-white rounded-2xl shadow-xl p-8">

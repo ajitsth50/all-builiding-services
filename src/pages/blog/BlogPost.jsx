@@ -4,10 +4,27 @@ import { FaDownload, FaExternalLinkAlt, FaFilePdf } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import compliancePdf from "../../assets/blog/ABPS-Compliance-Doc (2).pdf";
+import Seo from "../../components/Seo/Seo";
 
 const BlogPost = () => {
   return (
     <section className="bg-gray-50 min-h-screen">
+      <Seo
+        title="ABPS Compliance Document"
+        description="View, download and share the All Building & Property Services compliance document for clients, partners and project stakeholders."
+        path="/blog/abps-compliance"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "ABPS Compliance Document",
+          datePublished: "2026-05-29",
+          dateModified: "2026-05-29",
+          author: {
+            "@type": "Organization",
+            name: "All Building & Property Services",
+          },
+        }}
+      />
       <Navbar />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <article className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">

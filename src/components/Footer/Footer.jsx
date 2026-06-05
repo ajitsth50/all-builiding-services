@@ -21,9 +21,9 @@ const Footer = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 border-b border-sky-700 pb-10 md:pb-12">
           <div className="space-y-5">
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-wide font-montserrat leading-tight">
+            <p className="text-2xl md:text-3xl font-extrabold tracking-wide font-montserrat leading-tight">
               All Building & Property Services
-            </h1>
+            </p>
 
             <p className="text-sky-200 leading-relaxed font-source-sans text-sm break-words">
               All Building & Property Services delivers expert remedial construction,

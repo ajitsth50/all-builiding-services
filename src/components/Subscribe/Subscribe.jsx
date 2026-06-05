@@ -28,9 +28,9 @@ const JoinNow = () => {
                 Get started
               </span>
 
-              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-gray-800 font-montserrat">
+              <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-gray-800 font-montserrat">
                 Need work performed?
-              </h1>
+              </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-lg sm:text-xl leading-8 text-gray-700 font-source-sans">
                 Get peace of mind with{" "}

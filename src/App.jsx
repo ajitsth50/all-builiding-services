@@ -22,6 +22,7 @@ import Terms from "./pages/terms/Terms";
 import BlogPage from "./pages/blog/BlogPage";
 import BlogPost from "./pages/blog/BlogPost";
 import Service from './components/Services/Services'
+import Seo from "./components/Seo/Seo";
 
 import Servicehero from "./components/Services/Servicehero";
 // import WhyUs from "./components/Services/WhyUs";
@@ -36,6 +37,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
+              <Seo
+                title="Sydney Remedial Construction & Property Maintenance | All Building & Property Services"
+                description="Sydney remedial construction and property maintenance for strata, commercial and residential buildings, including waterproofing, concrete repairs and compliance works."
+                path="/"
+              />
               <Hero />
              
             

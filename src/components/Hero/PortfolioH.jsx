@@ -463,7 +463,7 @@ const PortfolioH = () => {
   return (
     <section className="py-16 bg-white px-6">
       <div className="max-w-7xl mx-auto text-center mb-10">
-        <h2 className="text-4xl font-bold text-gray-800 mb-3 font-montserrat">Our Projects Portfolio</h2>
+        <h1 className="text-4xl font-bold text-gray-800 mb-3 font-montserrat">Our Projects Portfolio</h1>
         <p className="text-gray-700 text-base max-w-2xl mx-auto font-source-sans">
           Explore our property maintenance work. Hover over a card to preview all photos from that project.
         </p>

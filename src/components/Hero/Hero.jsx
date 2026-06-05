@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import Navbar from "../Navbar/Navbar";
 import heroVideo from "../../assets/home.mp4"
@@ -9,15 +8,6 @@ import "./HeroSlider.css";
 const Hero = () => {
   return (
     <section className="relative -mt-[92px] lg:-mt-[96px]">
-      <Helmet>
-        <title>Building & Property Maintenance | Excellent Workmanship Solutions</title>
-        <meta
-          name="description"
-          content="We provide essential residential, commercial, and strata property maintenance services at industry-leading prices."
-        />
-        <link rel="canonical" href="" />
-      </Helmet>
-
       <Navbar />
 
       <div className="hero-slide relative overflow-hidden">

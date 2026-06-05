@@ -149,12 +149,12 @@ const ServiceItems = () => {
             Our Services
           </span>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 font-montserrat">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 font-montserrat">
             Expert Property Maintenance by{" "}
             <span className="text-sky-700">
               All Building & Property Services
             </span>
-          </h2>
+          </h1>
 
           <div className="w-32 h-1 bg-sky-600 mx-auto mt-6 rounded-full" />
         </motion.div>

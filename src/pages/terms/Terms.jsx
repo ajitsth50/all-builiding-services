@@ -2,10 +2,16 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Seo from "../../components/Seo/Seo";
 
 const Terms = () => {
   return (
     <section className="bg-gray-50 min-h-screen">
+      <Seo
+        title="Terms & Conditions"
+        description="Terms and conditions for All Building & Property Services Pty Ltd quotations, works, exclusions, access, payment and compliance requirements."
+        path="/terms"
+      />
       <Navbar />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

@@ -51,9 +51,9 @@ const Process = () => {
           <h2 className="text-sm font-semibold text-white bg-black px-4 py-1 rounded-full uppercase tracking-wider inline-block shadow font-montserrat">
             Our Process
           </h2>
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900 font-montserrat">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900 font-montserrat">
             A <span className="text-black">Collaborative & Refined</span> Approach
-          </h1>
+          </h2>
         </div>
 
         {/* Animated Process Steps */}

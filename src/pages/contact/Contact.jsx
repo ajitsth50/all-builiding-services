@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import Seo from "../../components/Seo/Seo";
 
 const fade = (d = 0) => ({
   initial: { opacity: 0, y: 18 },
@@ -49,6 +50,11 @@ const Contact = () => {
 
   return (
     <section id="contact" className="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-slate-900">
+      <Seo
+        title="Contact All Building & Property Services"
+        description="Contact All Building & Property Services for Sydney strata, commercial and residential remedial construction, property maintenance and urgent building repair enquiries."
+        path="/contact"
+      />
       <Navbar />
 
       {/* Header */}

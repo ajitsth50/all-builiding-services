@@ -4,6 +4,7 @@ import { FaArrowRight, FaFilePdf } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import compliancePdf from "../../assets/blog/ABPS-Compliance-Doc (2).pdf";
+import Seo from "../../components/Seo/Seo";
 
 const BlogPage = () => {
   const post = {
@@ -16,6 +17,11 @@ const BlogPage = () => {
 
   return (
     <section className="bg-gray-50 min-h-screen">
+      <Seo
+        title="Resources & Documents"
+        description="Access All Building & Property Services documents and updates for clients, partners and project stakeholders."
+        path="/blog"
+      />
       <Navbar />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <header className="mb-10">
