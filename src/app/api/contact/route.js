@@ -1,9 +1,33 @@
-const requiredFields = ["firstName", "lastName", "email", "phone", "subject", "message"];
+const contactRequiredFields = ["firstName", "lastName", "email", "phone", "subject", "message"];
+const quoteRequiredFields = ["name", "email", "address", "work_type", "building_type"];
+const defaultFromEmail = "All Building & Property Services <onboarding@resend.dev>";
+const publicEmailDomains = [
+  "gmail.com",
+  "gamil.com",
+  "hotmail.com",
+  "outlook.com",
+  "yahoo.com",
+  "icloud.com",
+];
 
 const clean = (value) => String(value || "").trim();
+const getEmailDomain = (value) => clean(value).match(/@([^>\s]+)>?$/)?.[1]?.toLowerCase();
+
+const getSafeFromEmail = () => {
+  const configuredFromEmail = clean(process.env.CONTACT_FROM_EMAIL);
+  const domain = getEmailDomain(configuredFromEmail);
+
+  if (!configuredFromEmail || publicEmailDomains.includes(domain)) {
+    return defaultFromEmail;
+  }
+
+  return configuredFromEmail;
+};
 
 export async function POST(request) {
   const body = await request.json().catch(() => ({}));
+  const isQuoteRequest = clean(body.formType) === "quote";
+  const requiredFields = isQuoteRequest ? quoteRequiredFields : contactRequiredFields;
   const missing = requiredFields.filter((field) => !clean(body[field]));
 
   if (missing.length) {
@@ -16,18 +40,33 @@ export async function POST(request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.CONTACT_TO_EMAIL;
-  const fromEmail = process.env.CONTACT_FROM_EMAIL;
 
-  if (!apiKey || !toEmail || !fromEmail) {
+  if (!apiKey || !toEmail) {
     return Response.json({ error: "Contact form email is not configured" }, { status: 500 });
   }
 
-  const firstName = clean(body.firstName);
-  const lastName = clean(body.lastName);
   const email = clean(body.email);
-  const phone = clean(body.phone);
-  const subject = clean(body.subject);
-  const message = clean(body.message);
+  const emailSubject = isQuoteRequest
+    ? "Website quote request"
+    : `Website enquiry: ${clean(body.subject)}`;
+  const messageLines = isQuoteRequest
+    ? [
+        `Name: ${clean(body.name)}`,
+        `Email: ${email}`,
+        `Project address: ${clean(body.address)}`,
+        `Work type: ${clean(body.work_type)}`,
+        `Building type: ${clean(body.building_type)}`,
+        "",
+        clean(body.message),
+      ]
+    : [
+        `Name: ${clean(body.firstName)} ${clean(body.lastName)}`,
+        `Email: ${email}`,
+        `Phone: ${clean(body.phone)}`,
+        `Subject: ${clean(body.subject)}`,
+        "",
+        clean(body.message),
+      ];
 
   const resendResponse = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -36,18 +75,11 @@ export async function POST(request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: fromEmail,
+      from: getSafeFromEmail(),
       to: [toEmail],
       reply_to: email,
-      subject: `Website enquiry: ${subject}`,
-      text: [
-        `Name: ${firstName} ${lastName}`,
-        `Email: ${email}`,
-        `Phone: ${phone}`,
-        `Subject: ${subject}`,
-        "",
-        message,
-      ].join("\n"),
+      subject: emailSubject,
+      text: messageLines.join("\n"),
     }),
   });
 

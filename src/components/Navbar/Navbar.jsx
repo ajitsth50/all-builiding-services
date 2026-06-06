@@ -45,19 +45,19 @@ const Navbar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        access_key: '"',
+        formType: 'quote',
         ...formData,
       }),
     });
 
     if (response.ok) {
-      toast.success('Quote submitted successfully! 🎉');
+      toast.success('Quote submitted successfully!');
       setFormData({});
       setShowForm(false);
     } else {
