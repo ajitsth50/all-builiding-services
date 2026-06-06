@@ -1,6 +1,7 @@
 const contactRequiredFields = ["firstName", "lastName", "email", "phone", "subject", "message"];
 const quoteRequiredFields = ["name", "email", "address", "work_type", "building_type"];
 const defaultFromEmail = "All Building & Property Services <onboarding@resend.dev>";
+const resendTestRecipient = "ajitsth50@gmail.com";
 const publicEmailDomains = [
   "gmail.com",
   "gamil.com",
@@ -39,9 +40,11 @@ export async function POST(request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL;
+  const configuredToEmail = clean(process.env.CONTACT_TO_EMAIL);
+  const fromEmail = getSafeFromEmail();
+  const toEmail = fromEmail === defaultFromEmail ? resendTestRecipient : configuredToEmail;
 
-  if (!apiKey || !toEmail) {
+  if (!apiKey || (!configuredToEmail && fromEmail !== defaultFromEmail)) {
     return Response.json({ error: "Contact form email is not configured" }, { status: 500 });
   }
 
@@ -75,7 +78,7 @@ export async function POST(request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: getSafeFromEmail(),
+      from: fromEmail,
       to: [toEmail],
       reply_to: email,
       subject: emailSubject,
