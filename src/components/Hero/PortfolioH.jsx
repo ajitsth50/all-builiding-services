@@ -35,13 +35,6 @@ import timberfarming7 from "../../assets/portfolio/timberfarming7.jpg";
 import timberfarming8 from "../../assets/portfolio/timberfarming8.jpg";
 import timberfarming9 from "../../assets/portfolio/timberfarming9.jpg";
 
-import pressurewash1 from "../../assets/portfolio/pressurewash1.jpg";
-import pressurewash2 from "../../assets/portfolio/pressurewash2.jpg";
-import pressurewash3 from "../../assets/portfolio/pressurewash3.jpg";
-import pressurewash4 from "../../assets/portfolio/pressurewash4.jpg";
-import pressurewash5 from "../../assets/portfolio/pressurewash5.jpg";
-import pressurewash6 from "../../assets/portfolio/pressurewash6.jpg";
-
 import peeblecrete1 from "../../assets/portfolio/peeblecrete1.jpg";
 import peeblecrete2 from "../../assets/portfolio/peeblecrete2.jpg";
 import peeblecrete3 from "../../assets/portfolio/peeblecrete3.jpg";
@@ -273,11 +266,6 @@ const projects = [
       beamreplacement25,
       beamreplacement26,
     ],
-  },
-  {
-    title: "Pressure Wash",
-    category: "Finishes",
-    images: [pressurewash1, pressurewash2, pressurewash3, pressurewash4, pressurewash5, pressurewash6],
   },
   {
     title: "Pebblecrete",
