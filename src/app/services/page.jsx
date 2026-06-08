@@ -1,11 +1,28 @@
 import ServicePage from "../../views/services/ServicePage";
 
+const title = "Remedial & Property Maintenance Services Sydney | ABPS";
+const description =
+  "Sydney remedial construction, waterproofing, concrete repair, leak detection, fire-order compliance and general property maintenance for strata & commercial.";
+const ogImage = "/og-image.png";
+
 export const metadata = {
-  title: "Remedial Construction & Property Maintenance Services",
-  description:
-    "Explore Sydney remedial construction, waterproofing, fire order compliance, concrete repair, painting, plumbing, electrical and general property maintenance services.",
+  title: {
+    absolute: title,
+  },
+  description,
   alternates: {
     canonical: "/services",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/services",
+    images: [ogImage],
+  },
+  twitter: {
+    title,
+    description,
+    images: [ogImage],
   },
 };
 

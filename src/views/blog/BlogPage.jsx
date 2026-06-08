@@ -22,13 +22,14 @@ const BlogPage = () => {
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <header className="mb-10">
           <p className="text-sm font-semibold uppercase tracking-wide text-sky-600">
-            Blog
+            Guides
           </p>
           <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-slate-900 font-montserrat">
-            Resources & Documents
+            Strata Building Resources & Guides
           </h1>
           <p className="mt-4 max-w-2xl text-gray-600 leading-relaxed font-source-sans">
-            Important documents and updates from All Building & Property Services.
+            Practical guidance on strata remedial works, building defects, waterproofing, and NSW
+            compliance for Sydney owners corporations and strata managers.
           </p>
         </header>
 

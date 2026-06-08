@@ -1,11 +1,28 @@
 import AboutPage from "../../views/about/AboutPage";
 
+const title = "About ABPS | Sydney Remedial & Strata Specialists";
+const description =
+  "Meet All Building & Property Services — Sydney remedial and strata maintenance specialists delivering compliant, defect-free work for Class 2 buildings.";
+const ogImage = "/og-image.png";
+
 export const metadata = {
-  title: "About All Building & Property Services",
-  description:
-    "Learn about All Building & Property Services, a Sydney building maintenance and remedial construction team supporting residential, commercial and strata clients.",
+  title: {
+    absolute: title,
+  },
+  description,
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/about",
+    images: [ogImage],
+  },
+  twitter: {
+    title,
+    description,
+    images: [ogImage],
   },
 };
 

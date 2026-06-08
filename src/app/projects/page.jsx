@@ -1,11 +1,28 @@
 import PortfolioPage from "../../views/portfolio/PortfolioPage";
 
+const title = "Strata & Remedial Project Portfolio Sydney | ABPS";
+const description =
+  "See completed Sydney remedial and strata projects by ABPS — waterproofing, concrete remediation, façade repairs and compliance works across NSW.";
+const ogImage = "/og-image.png";
+
 export const metadata = {
-  title: "Project Gallery",
-  description:
-    "View completed All Building & Property Services projects including fencing, waterproofing, concrete works, carpentry, remedial repairs and property maintenance across Sydney.",
+  title: {
+    absolute: title,
+  },
+  description,
   alternates: {
     canonical: "/projects",
+  },
+  openGraph: {
+    title,
+    description,
+    url: "/projects",
+    images: [ogImage],
+  },
+  twitter: {
+    title,
+    description,
+    images: [ogImage],
   },
 };
 

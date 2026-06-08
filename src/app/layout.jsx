@@ -2,15 +2,18 @@ import "../index.css";
 
 const siteUrl = "https://www.allbuildingservices.com.au";
 const businessName = "All Building & Property Services";
+const defaultTitle = "Sydney Remedial & Strata Building Maintenance | ABPS";
+const defaultDescription =
+  "Remedial construction and property maintenance for Sydney Class 2 strata buildings — waterproofing, concrete repairs, leak detection and fire compliance.";
+const defaultOgImage = "/og-image.png";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Sydney Remedial Construction & Property Maintenance | All Building & Property Services",
+    default: defaultTitle,
     template: "%s | All Building & Property Services",
   },
-  description:
-    "All Building & Property Services provides Sydney remedial construction, property maintenance, waterproofing, concrete repairs and fire order compliance works.",
+  description: defaultDescription,
   alternates: {
     canonical: "/",
   },
@@ -18,15 +21,22 @@ export const metadata = {
     type: "website",
     url: siteUrl,
     siteName: businessName,
-    title: "Sydney Remedial Construction & Property Maintenance | All Building & Property Services",
-    description:
-      "Sydney remedial construction and property maintenance for strata, commercial and residential buildings.",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "All Building & Property Services Sydney remedial building maintenance",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Sydney Remedial Construction & Property Maintenance | All Building & Property Services",
-    description:
-      "Sydney remedial construction and property maintenance for strata, commercial and residential buildings.",
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [defaultOgImage],
   },
   icons: {
     icon: "/logo.png",
