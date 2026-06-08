@@ -176,6 +176,30 @@ import brickwallcrackstitch18 from "../../assets/portfolio/brickwallcrackstitch1
 import brickwallcrackstitch19 from "../../assets/portfolio/brickwallcrackstitch19.jpg";
 import brickwallcrackstitch20 from "../../assets/portfolio/brickwallcrackstitch20.jpg";
 
+import newduplexbuilt1 from "../../assets/portfolio/newduplexbuilt1.jpg";
+import newduplexbuilt2 from "../../assets/portfolio/newduplexbuilt2.jpg";
+import newduplexbuilt3 from "../../assets/portfolio/newduplexbuilt3.jpg";
+import newduplexbuilt4 from "../../assets/portfolio/newduplexbuilt4.jpg";
+import newduplexbuilt5 from "../../assets/portfolio/newduplexbuilt5.jpg";
+import newduplexbuilt6 from "../../assets/portfolio/newduplexbuilt6.jpg";
+import newduplexbuilt7 from "../../assets/portfolio/newduplexbuilt7.jpg";
+import newduplexbuilt8 from "../../assets/portfolio/newduplexbuilt8.jpg";
+import newduplexbuilt9 from "../../assets/portfolio/newduplexbuilt9.jpg";
+import newduplexbuilt10 from "../../assets/portfolio/newduplexbuilt10.jpg";
+import newduplexbuilt11 from "../../assets/portfolio/newduplexbuilt11.jpg";
+import newduplexbuilt12 from "../../assets/portfolio/newduplexbuilt12.jpg";
+import newduplexbuilt13 from "../../assets/portfolio/newduplexbuilt13.jpg";
+import newduplexbuilt14 from "../../assets/portfolio/newduplexbuilt14.jpg";
+import newduplexbuilt15 from "../../assets/portfolio/newduplexbuilt15.jpg";
+import newduplexbuilt16 from "../../assets/portfolio/newduplexbuilt16.jpg";
+import newduplexbuilt17 from "../../assets/portfolio/newduplexbuilt17.jpg";
+import newduplexbuilt18 from "../../assets/portfolio/newduplexbuilt18.jpg";
+import newduplexbuilt19 from "../../assets/portfolio/newduplexbuilt19.jpg";
+import newduplexbuilt20 from "../../assets/portfolio/newduplexbuilt20.jpg";
+import newduplexbuilt21 from "../../assets/portfolio/newduplexbuilt21.jpg";
+import newduplexbuilt22 from "../../assets/portfolio/newduplexbuilt22.jpg";
+import newduplexbuilt23 from "../../assets/portfolio/newduplexbuilt23.jpg";
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -303,6 +327,35 @@ const projects = [
       brickwallcrackstitch18,
       brickwallcrackstitch19,
       brickwallcrackstitch20,
+    ],
+  },
+  {
+    title: "New Duplex built",
+    category: "Construction",
+    images: [
+      newduplexbuilt1,
+      newduplexbuilt2,
+      newduplexbuilt3,
+      newduplexbuilt4,
+      newduplexbuilt5,
+      newduplexbuilt6,
+      newduplexbuilt7,
+      newduplexbuilt8,
+      newduplexbuilt9,
+      newduplexbuilt10,
+      newduplexbuilt11,
+      newduplexbuilt12,
+      newduplexbuilt13,
+      newduplexbuilt14,
+      newduplexbuilt15,
+      newduplexbuilt16,
+      newduplexbuilt17,
+      newduplexbuilt18,
+      newduplexbuilt19,
+      newduplexbuilt20,
+      newduplexbuilt21,
+      newduplexbuilt22,
+      newduplexbuilt23,
     ],
   },
   {
