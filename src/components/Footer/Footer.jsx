@@ -67,6 +67,15 @@ const Footer = () => {
                   <Link href="/blog">Blog</Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors break-words">
+                  <a
+                    href="/documents/ABPS-Capability-Statement-2026.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Capability Statement
+                  </a>
+                </li>
+                <li className="hover:text-green-300 transition-colors break-words">
                   <Link href="/privacy">
                     Privacy Policy – All Building and Property Services Pty Ltd
                   </Link>
