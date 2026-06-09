@@ -8,7 +8,7 @@ import VisibilitySensor from "react-visibility-sensor";
 const STATS = [
   {
     label: "Projects Completed",
-    value: 1200,
+    value: 5000,
     suffix: "+",
     icon: (
       <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor">
