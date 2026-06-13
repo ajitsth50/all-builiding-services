@@ -15,6 +15,16 @@ const nextConfig = {
         destination: "/terms-quote",
         permanent: true,
       },
+      {
+        source: "/privacy",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/privacy/",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
     ];
   },
 };

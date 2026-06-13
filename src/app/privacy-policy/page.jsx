@@ -5,7 +5,7 @@ export const metadata = {
   description:
     "Privacy Policy for All Building & Property Services Pty Ltd, covering website enquiries, quote requests and service-related information handling.",
   alternates: {
-    canonical: "/privacy",
+    canonical: "/privacy-policy",
   },
 };
 
