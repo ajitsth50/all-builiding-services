@@ -81,7 +81,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors break-words">
-                  <Link href="/terms">Terms & Conditions – Quotations</Link>
+                  <Link href="/terms-quote">Terms & Conditions – Quote</Link>
                 </li>
                 <li className="hover:text-green-300 transition-colors break-words">
                   <Link href="/terms-invoice">Terms & Conditions – Invoice</Link>

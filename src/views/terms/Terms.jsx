@@ -14,7 +14,7 @@ const Terms = () => {
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
           <header className="mb-8">
             <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Terms &amp; Conditions
+              Terms &amp; Conditions - Quote
             </h1>
             <p className="mt-2 text-sm text-gray-500">
               Effective from <span className="font-medium">01/07/2025</span> –{" "}

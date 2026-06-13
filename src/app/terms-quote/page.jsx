@@ -1,11 +1,11 @@
 import Terms from "../../views/terms/Terms";
 
 export const metadata = {
-  title: "Terms & Conditions",
+  title: "Terms & Conditions - Quote",
   description:
     "Terms and conditions for All Building & Property Services Pty Ltd quotations, works, exclusions, access, payment and compliance requirements.",
   alternates: {
-    canonical: "/terms",
+    canonical: "/terms-quote",
   },
 };
 
