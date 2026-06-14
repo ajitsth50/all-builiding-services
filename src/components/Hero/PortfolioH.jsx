@@ -18,6 +18,12 @@ import waterproofing4 from "../../assets/portfolio/waterproofing4.jpg";
 import waterproofing5 from "../../assets/portfolio/waterproofing5.jpg";
 import waterproofing6 from "../../assets/portfolio/waterproofing6.jpg";
 import waterproofing7 from "../../assets/portfolio/waterproofing7.jpg";
+import waterproofing8 from "../../assets/portfolio/waterproofing8.jpg";
+import waterproofing9 from "../../assets/portfolio/waterproofing9.jpg";
+import waterproofing10 from "../../assets/portfolio/waterproofing10.jpg";
+import waterproofing11 from "../../assets/portfolio/waterproofing11.jpg";
+import waterproofing12 from "../../assets/portfolio/waterproofing12.jpg";
+import waterproofing13 from "../../assets/portfolio/waterproofing13.jpg";
 
 import timbergate1 from "../../assets/portfolio/timbergate1.jpg";
 import timbergate2 from "../../assets/portfolio/timbergate2.jpg";
@@ -213,6 +219,12 @@ const projects = [
       waterproofing5,
       waterproofing6,
       waterproofing7,
+      waterproofing8,
+      waterproofing9,
+      waterproofing10,
+      waterproofing11,
+      waterproofing12,
+      waterproofing13,
     ],
   },
   {
