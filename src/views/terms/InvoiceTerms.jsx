@@ -184,7 +184,7 @@ const InvoiceTerms = () => {
             <p className="text-sm font-semibold uppercase tracking-wide text-sky-700">
               Terms &amp; Conditions
             </p>
-            <h1 className="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900">
+            <h1 className="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900">
               Terms &amp; Conditions – Invoice
             </h1>
             <p className="mt-2 text-sm text-gray-500">
@@ -202,7 +202,7 @@ const InvoiceTerms = () => {
           <div className="mt-10 space-y-10">
             {sections.map((section) => (
               <section key={section.title}>
-                <h2 className="text-xl font-semibold text-slate-800 mb-4">
+                <h2 className="text-xl font-semibold text-gray-800 mb-4">
                   {section.title}
                 </h2>
                 <div className="space-y-3 text-gray-700 leading-relaxed">

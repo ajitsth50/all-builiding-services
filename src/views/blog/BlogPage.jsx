@@ -24,7 +24,7 @@ const BlogPage = () => {
           <p className="text-sm font-semibold uppercase tracking-wide text-sky-600">
             Guides
           </p>
-          <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-slate-900 font-montserrat">
+          <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-gray-900 font-montserrat">
             Strata Building Resources & Guides
           </h1>
           <p className="mt-4 max-w-2xl text-gray-600 leading-relaxed font-source-sans">
@@ -41,7 +41,7 @@ const BlogPage = () => {
                 PDF Document
               </div>
               <p className="mt-5 text-sm text-gray-500">{post.date}</p>
-              <h2 className="mt-2 text-2xl font-bold text-slate-900 font-montserrat">
+              <h2 className="mt-2 text-2xl font-bold text-gray-900 font-montserrat">
                 {post.title}
               </h2>
               <p className="mt-3 text-gray-600 leading-relaxed font-source-sans">

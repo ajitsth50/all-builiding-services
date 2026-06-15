@@ -42,7 +42,7 @@ const items = [
         <path strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2 4 4 10-10 2 2-12 12-6-6z" />
       </svg>
     ),
-    color: "text-teal-700"
+    color: "text-sky-700"
   },
   {
     title: "Safety and Functionality Preservation",
@@ -52,7 +52,7 @@ const items = [
         <path strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V7l-8-4-8 4v5c0 6 8 10 8 10z" />
       </svg>
     ),
-    color: "text-slate-900"
+    color: "text-gray-900"
   },
   {
     title: "Cost-Effective Maintenance",
@@ -62,7 +62,7 @@ const items = [
         <path strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" d="M12 8c-2.5 0-4 1.5-4 3.5S9.5 15 12 15s4 1 4 2.5S13.5 20 12 20m0-12V4m0 16v0" />
       </svg>
     ),
-    color: "text-slate-900"
+    color: "text-gray-900"
   }
 ];
 
@@ -72,7 +72,7 @@ const Banner2 = () => {
     <section className="relative bg-white py-24">
       {/* subtle background accent */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-[15%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-teal-500/10 blur-3xl" />
+        <div className="absolute left-1/2 top-[15%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-sky-500/10 blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
@@ -86,18 +86,18 @@ const Banner2 = () => {
         >
           <motion.p
             variants={badge}
-            className="inline-flex items-center justify-center rounded-full border border-teal-600/25 bg-teal-50/60 px-3 py-1 text-[12px] sm:text-xs font-semibold tracking-[0.18em] uppercase text-teal-700"
+            className="inline-flex items-center justify-center rounded-full border border-sky-600/25 bg-sky-50/60 px-3 py-1 text-[12px] sm:text-xs font-semibold tracking-[0.18em] uppercase text-sky-700"
           >
             Why choose us
           </motion.p>
 
           <motion.h2
             variants={child}
-            className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-slate-900"
+            className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight text-gray-900"
           >
             Is your property showing{" "}
             <span className="relative inline-block">
-              <span className="bg-gradient-to-r from-teal-700 via-teal-600 to-teal-700 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-sky-700 via-sky-600 to-sky-700 bg-clip-text text-transparent">
                 cracks or leaks?
               </span>
               <motion.span
@@ -105,17 +105,17 @@ const Banner2 = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-                className="absolute left-0 -bottom-1 h-[3px] w-full origin-left rounded bg-teal-600/80"
+                className="absolute left-0 -bottom-1 h-[3px] w-full origin-left rounded bg-sky-600/80"
               />
             </span>
           </motion.h2>
 
           <motion.p
             variants={child}
-            className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-slate-800"
+            className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-gray-800"
           >
             Don’t risk safety and costly repairs. Trust our expert maintenance team. With over{" "}
-            <span className="font-semibold text-slate-900">10 years of experience</span>, we deliver
+            <span className="font-semibold text-gray-900">10 years of experience</span>, we deliver
             reliable, timely, and insured solutions.
           </motion.p>
         </motion.div>
@@ -136,16 +136,16 @@ const Banner2 = () => {
                   className="flex items-start gap-5"
                 >
                   <span
-                    className={`mt-1 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 ring-1 ring-inset ring-teal-600/20 ${item.color}`}
+                    className={`mt-1 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 ring-1 ring-inset ring-sky-600/20 ${item.color}`}
                     aria-hidden
                   >
                     {item.icon}
                   </span>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-900">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-gray-900">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-lg text-slate-800">{item.text}</p>
+                    <p className="mt-2 text-lg text-gray-800">{item.text}</p>
                   </div>
                 </motion.li>
               ))}
@@ -157,7 +157,7 @@ const Banner2 = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
               variants={sectionFade}
-              className="mt-10 text-sm sm:text-base text-slate-600"
+              className="mt-10 text-sm sm:text-base text-gray-600"
             >
               Fully insured. Residential, commercial, and strata. Sydney-wide response.
             </motion.p>
@@ -171,13 +171,13 @@ const Banner2 = () => {
   variants={sectionFade}
   className="lg:col-span-3"
 >
-  <div className="relative overflow-hidden rounded-2xl border border-slate-200 shadow-md">
+  <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-md">
     <img
       className="w-full h-[500px] object-cover"  
       src={choose.src}
       alt="Remedial repairs and maintenance in progress"
     />
-    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent" />
   </div>
 </motion.div>
         </div>

@@ -4,13 +4,13 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
-const Check = ({ className = "h-6 w-6 text-blue-500" }) => (
+const Check = ({ className = "h-6 w-6 text-sky-500" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
 );
 
-const Bolt = ({ className = "h-6 w-6 text-blue-500" }) => (
+const Bolt = ({ className = "h-6 w-6 text-sky-500" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
   </svg>
@@ -108,8 +108,8 @@ const Privacy = () => {
               <p className="mb-4">
                 We use industry-standard security measures to protect your data. However, no method of transmission over the internet is completely secure.
               </p>
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <p className="text-blue-700">
+              <div className="bg-sky-50 border-l-4 border-sky-500 p-4 rounded">
+                <p className="text-sky-700">
                   We regularly review and update our security policies to ensure your information remains protected.
                 </p>
               </div>
@@ -165,7 +165,7 @@ const Privacy = () => {
               <p className="text-gray-600 mb-4">
                 If you have any questions about this Privacy Policy or your data, please contact us:
               </p>
-              <div className="flex items-center space-x-2 text-blue-600">
+              <div className="flex items-center space-x-2 text-sky-600">
                 <Mail />
                 <a href="mailto:admin@allbuildingservices.com.au" className="hover:underline">
                   admin@allbuildingservices.com.au

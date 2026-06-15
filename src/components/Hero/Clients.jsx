@@ -72,24 +72,24 @@ const Clients = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center bg-gradient-to-br from-[#fffef6] via-[#fff4d9] to-[#ffeaa7] text-black relative overflow-hidden py-20 px-6">
+    <div className="w-full min-h-screen flex flex-col items-center bg-gradient-to-br from-white via-sky-50 to-gray-50 text-black relative overflow-hidden py-20 px-6">
       <Toaster position="top-right" />
       <div className="absolute inset-0 bg-[url('/pattern.svg')] bg-repeat opacity-5 pointer-events-none z-0"></div>
 
       <div className="max-w-7xl w-full mx-auto z-10 relative">
         {/* Header */}
         <div className="w-full flex flex-col items-center justify-center mb-16 text-center px-4">
-          <span className="inline-block bg-yellow-500 text-white text-sm font-semibold uppercase px-6 py-2 rounded-full tracking-wider shadow-md mb-3">
+          <span className="inline-block bg-sky-500 text-white text-sm font-semibold uppercase px-6 py-2 rounded-full tracking-wider shadow-md mb-3">
             Our Clients Say
           </span>
           <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
             Why{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700">
               Homeowners & Businesses
             </span>{" "}
             Trust Us
           </h3>
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mt-5 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-sky-400 to-sky-600 mt-5 rounded-full"></div>
         </div>
 
         {/* Testimonials */}
@@ -97,7 +97,7 @@ const Clients = () => {
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between h-auto rounded-xl border border-yellow-400 p-6 shadow-lg bg-white hover:bg-yellow-50 transition-all duration-300"
+              className="flex flex-col justify-between h-auto rounded-xl border border-sky-400 p-6 shadow-lg bg-white hover:bg-sky-50 transition-all duration-300"
             >
               <p className="text-md md:text-lg mb-4 text-gray-700">"{t.text}"</p>
               <div>
@@ -112,7 +112,7 @@ const Clients = () => {
         <div className="mt-12 text-center">
           <button
             onClick={() => setShowForm(!showForm)}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-3 rounded-full shadow-md transition"
+            className="bg-sky-500 hover:bg-sky-600 text-white font-medium px-6 py-3 rounded-full shadow-md transition"
           >
             {showForm ? "Close Form" : "Give a Review"}
           </button>
@@ -122,7 +122,7 @@ const Clients = () => {
         {showForm && (
           <form
             onSubmit={handleSubmit}
-            className="mt-10 max-w-xl mx-auto p-6 border border-yellow-400 rounded-xl shadow-lg bg-white"
+            className="mt-10 max-w-xl mx-auto p-6 border border-sky-400 rounded-xl shadow-lg bg-white"
           >
             <div className="mb-4">
               <label className="block mb-2 font-semibold text-gray-800">Name</label>
@@ -132,7 +132,7 @@ const Clients = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
               />
             </div>
             <div className="mb-4">
@@ -143,7 +143,7 @@ const Clients = () => {
                 value={formData.role}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
               />
             </div>
             <div className="mb-4">
@@ -154,7 +154,7 @@ const Clients = () => {
                 onChange={handleChange}
                 required
                 rows="4"
-                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-sky-400"
               ></textarea>
             </div>
             <button
@@ -162,8 +162,8 @@ const Clients = () => {
               disabled={loading}
               className={`w-full py-3 font-medium rounded-full transition shadow-md ${
                 loading
-                  ? "bg-yellow-300 text-white cursor-not-allowed"
-                  : "bg-yellow-500 hover:bg-yellow-600 text-white"
+                  ? "bg-sky-300 text-white cursor-not-allowed"
+                  : "bg-sky-500 hover:bg-sky-600 text-white"
               }`}
             >
               {loading ? "Submitting..." : "Submit Review"}

@@ -12,9 +12,9 @@ const JoinNow = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
-        className="relative bg-gradient-to-br from-sky-50 via-white to-green-50"
+        className="relative bg-gradient-to-br from-sky-50 via-white to-sky-50"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/5 to-green-900/5" aria-hidden />
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/5 to-sky-900/5" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32 lg:px-8">
           {/* Card */}
           <motion.div
@@ -46,7 +46,7 @@ const JoinNow = () => {
             <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-sm ring-1 ring-inset ring-sky-600/20 transition hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-600 px-6 py-3 text-base font-semibold text-white shadow-sm ring-1 ring-inset ring-sky-600/20 transition hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600"
                 aria-label="Get a quote"
               >
                 <FaFileSignature className="text-white" />

@@ -142,7 +142,7 @@ const Servicehero = () => {
     <section className="relative bg-white py-20">
       {/* Accent bg */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-8 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-teal-500/10 blur-3xl" />
+        <div className="absolute left-1/2 top-8 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-sky-500/10 blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -154,19 +154,19 @@ const Servicehero = () => {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full border border-teal-600/20 bg-teal-50 px-3 py-1">
-            <span className="text-[12px] font-semibold tracking-[0.18em] uppercase text-teal-700">Services</span>
+          <motion.div variants={item} className="inline-flex items-center gap-2 rounded-full border border-sky-600/20 bg-sky-50 px-3 py-1">
+            <span className="text-[12px] font-semibold tracking-[0.18em] uppercase text-sky-700">Services</span>
           </motion.div>
           <motion.h1
             variants={item}
-            className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-slate-900"
+            className="mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight text-gray-900"
           >
             Comprehensive Remedial Construction &amp; Property Services
           </motion.h1>
-          <motion.p variants={item} className="mt-4 text-lg sm:text-xl leading-8 text-slate-700">
+          <motion.p variants={item} className="mt-4 text-lg sm:text-xl leading-8 text-gray-700">
             Remedial repairs, defect rectification, waterproofing and building compliance for residential, strata and commercial properties.
           </motion.p>
-          <motion.div variants={item} className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-teal-600 to-teal-400" />
+          <motion.div variants={item} className="mx-auto mt-6 h-1 w-24 rounded-full bg-gradient-to-r from-sky-600 to-sky-400" />
         </motion.header>
 
         {/* Cards: uniform, no clipping */}
@@ -185,26 +185,26 @@ const Servicehero = () => {
               <motion.article
                 key={s.key}
                 variants={item}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
               >
                 {/* Header */}
                 <div className="mb-4 inline-flex items-center gap-3">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50 text-teal-700 ring-1 ring-inset ring-teal-600/20">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-50 text-sky-700 ring-1 ring-inset ring-sky-600/20">
                     <span className="text-xl">{s.icon}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">{s.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-gray-900">{s.title}</h3>
                 </div>
 
                 {/* Intro with fixed min-height for alignment */}
-                <p className="text-slate-700 text-base sm:text-lg leading-relaxed min-h-[72px]">
+                <p className="text-gray-700 text-base sm:text-lg leading-relaxed min-h-[72px]">
                   {s.intro}
                 </p>
 
                 {/* Bullets with no overflow clipping */}
                 <ul className="mt-4 space-y-2.5">
                   {items.map((b, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-slate-700">
-                      <svg viewBox="0 0 24 24" className="mt-1 h-4 w-4 text-teal-700" fill="none" stroke="currentColor">
+                    <li key={idx} className="flex items-start gap-2 text-gray-700">
+                      <svg viewBox="0 0 24 24" className="mt-1 h-4 w-4 text-sky-700" fill="none" stroke="currentColor">
                         <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 12l4 4 12-12" />
                       </svg>
                       <span className="text-sm sm:text-base leading-6">{b}</span>
@@ -216,7 +216,7 @@ const Servicehero = () => {
                 {s.bullets.length > VISIBLE_BULLETS && (
                   <button
                     onClick={() => toggle(s.key)}
-                    className="mt-3 self-start text-sm font-semibold text-teal-700 hover:text-teal-800"
+                    className="mt-3 self-start text-sm font-semibold text-sky-700 hover:text-sky-800"
                   >
                     {isOpen ? "Hide scope" : "View full scope"}
                   </button>
@@ -226,19 +226,19 @@ const Servicehero = () => {
                 <div className="mt-auto pt-6 flex items-center gap-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-teal-600/20 transition hover:bg-teal-700"
+                    className="inline-flex items-center justify-center rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-sky-600/20 transition hover:bg-sky-700"
                   >
                     Get a quote
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                    className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-50"
                   >
                     Ask a question
                   </Link>
                 </div>
 
-                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-transparent transition group-hover:ring-teal-600/15" />
+                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-transparent transition group-hover:ring-sky-600/15" />
               </motion.article>
             );
           })}

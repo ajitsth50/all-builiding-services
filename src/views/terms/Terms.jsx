@@ -13,7 +13,7 @@ const Terms = () => {
         {/* Header */}
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
           <header className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
+            <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
               Terms &amp; Conditions - Quote
             </h1>
             <p className="mt-2 text-sm text-gray-500">
@@ -30,7 +30,7 @@ const Terms = () => {
 
           {/* 1. Quotes */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">1. Quotes</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">1. Quotes</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>
                 All quotes are valid for thirty (30) days from the date of the quotation. If acceptance
@@ -72,9 +72,9 @@ const Terms = () => {
 
           {/* Agreement + Definitions */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">Agreement</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">Agreement</h2>
 
-            <h3 className="text-lg font-semibold text-slate-800 mb-2">Definitions</h3>
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">Definitions</h3>
             <div className="bg-gray-50 rounded-lg p-6 text-gray-700 space-y-3">
               <p>
                 <span className="font-semibold">“ABPS”</span> means All Building and Property Services Pty Ltd (ABN 49 645 563 597).
@@ -103,7 +103,7 @@ const Terms = () => {
 
           {/* 1. Acceptance */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">1. Acceptance</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">1. Acceptance</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>
                 Any instructions from the Customer placing an order or accepting a quote shall
@@ -115,7 +115,7 @@ const Terms = () => {
 
           {/* 2. The Works */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">2. The Works</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">2. The Works</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>ABPS will provide the Works to the Customer and the Customer will pay the Price to ABPS for performing those Works.</li>
               <li>
@@ -135,7 +135,7 @@ const Terms = () => {
 
           {/* 3. Exclusions */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">3. Exclusions</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">3. Exclusions</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li className="list-none">
                 3.2 Unless specifically agreed by the parties, ABPS will not:
@@ -146,7 +146,7 @@ const Terms = () => {
 
           {/* 4. Work Site Access */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">4. Work Site Access</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">4. Work Site Access</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>The Customer will provide free unrestricted access to all required work areas.</li>
               <li>ABPS will conduct the Works between regular business hours being 8am to 5pm Monday to Friday, unless otherwise agreed.</li>
@@ -155,7 +155,7 @@ const Terms = () => {
 
           {/* 5. Payment */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">5. Payment</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">5. Payment</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>
                 ABPS will render an invoice to the Customer which is to be paid within 14 days under
@@ -177,7 +177,7 @@ const Terms = () => {
 
           {/* 6. Compliance */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">6. Compliance</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">6. Compliance</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>ABPS will perform all work in compliance with applicable Australian Standards in force at the time of the work.</li>
               <li>
@@ -189,7 +189,7 @@ const Terms = () => {
 
           {/* 7. Risk and Title */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">7. Risk and Title of Property</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">7. Risk and Title of Property</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>The risk in all goods supplied shall pass to the Customer upon delivery.</li>
               <li>All goods supplied shall remain the property of ABPS until all sums due have been paid in full.</li>
@@ -203,7 +203,7 @@ const Terms = () => {
 
           {/* 8. Hazardous Materials / Safety */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
               8. Hazardous Materials / Worksite Safety
             </h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
@@ -233,7 +233,7 @@ const Terms = () => {
 
           {/* 9. Cancellation */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">9. Cancellation</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">9. Cancellation</h2>
             <p className="text-gray-700">
               The Customer may at its option cancel the Works, or any part thereof, at any time. The
               Customer will be liable to pay for materials and services provided to the date of
@@ -243,7 +243,7 @@ const Terms = () => {
 
           {/* 10. Insurance and Warranty (note original numbering typo keeps “9.1”) */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
               10. Insurance and Warranty
             </h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
@@ -266,7 +266,7 @@ const Terms = () => {
 
           {/* 10. Limitation of Liability and Excepted Risks */}
           <section className="mb-10">
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
               10. Limitation of Liability and Excepted Risks
             </h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
@@ -300,7 +300,7 @@ const Terms = () => {
 
           {/* 11. General */}
           <section>
-            <h2 className="text-xl font-semibold text-slate-800 mb-4">11. General</h2>
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">11. General</h2>
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li>
                 In the event of conflict between these conditions and those which may be included in, or

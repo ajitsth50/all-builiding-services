@@ -28,7 +28,7 @@ const BlogPost = () => {
 
             <header className="mt-6">
               <p className="text-sm text-gray-500">29 May 2026</p>
-              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-slate-900 font-montserrat">
+              <h1 className="mt-3 text-3xl md:text-5xl font-extrabold text-gray-900 font-montserrat">
                 ABPS Compliance Document
               </h1>
               <p className="mt-5 text-lg text-gray-600 leading-relaxed font-source-sans">

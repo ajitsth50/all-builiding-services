@@ -49,7 +49,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-white via-blue-50 to-blue-100 text-slate-900">
+    <section id="contact" className="bg-gradient-to-br from-white via-sky-50 to-sky-100 text-gray-900">
       <Navbar />
 
       {/* Header */}
@@ -60,13 +60,13 @@ const Contact = () => {
           animate="animate"
           className="text-center max-w-3xl mx-auto"
         >
-          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-teal-700">
+          <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-sky-700">
             Contact us
           </p>
-          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold text-blue-900">
+          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold text-sky-900">
             Get in touch
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-slate-700">
+          <p className="mt-3 text-base sm:text-lg text-gray-700">
             We’re available 24/7 for urgent works and quotes.
           </p>
         </motion.div>
@@ -91,69 +91,69 @@ const Contact = () => {
             />
             {/* Name */}
             <div>
-              <label className="block text-sm font-semibold text-slate-800">First Name *</label>
+              <label className="block text-sm font-semibold text-gray-800">First Name *</label>
               <input
                 name="firstName"
                 type="text"
                 required
                 placeholder="First"
-                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="mt-2 w-full rounded-lg border border-gray-200 bg-white py-3 px-4 text-gray-700 placeholder-gray-400 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-800">Last Name *</label>
+              <label className="block text-sm font-semibold text-gray-800">Last Name *</label>
               <input
                 name="lastName"
                 type="text"
                 required
                 placeholder="Last"
-                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="mt-2 w-full rounded-lg border border-gray-200 bg-white py-3 px-4 text-gray-700 placeholder-gray-400 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
               />
             </div>
 
             {/* Email / Phone */}
             <div>
-              <label className="block text-sm font-semibold text-slate-800">Email *</label>
+              <label className="block text-sm font-semibold text-gray-800">Email *</label>
               <input
                 name="email"
                 type="email"
                 required
                 placeholder="you@example.com"
-                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="mt-2 w-full rounded-lg border border-gray-200 bg-white py-3 px-4 text-gray-700 placeholder-gray-400 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-800">Phone *</label>
+              <label className="block text-sm font-semibold text-gray-800">Phone *</label>
               <input
                 name="phone"
                 type="tel"
                 required
                 placeholder="02 7229 3522"
-                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="mt-2 w-full rounded-lg border border-gray-200 bg-white py-3 px-4 text-gray-700 placeholder-gray-400 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
               />
             </div>
 
             {/* Subject */}
             <div className="sm:col-span-2">
-              <label className="block text-sm font-semibold text-slate-800">Subject *</label>
+              <label className="block text-sm font-semibold text-gray-800">Subject *</label>
               <input
                 name="subject"
                 type="text"
                 required
                 placeholder="e.g. Waterproofing quote"
-                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="mt-2 w-full rounded-lg border border-gray-200 bg-white py-3 px-4 text-gray-700 placeholder-gray-400 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
               />
             </div>
 
             {/* Message */}
             <div className="sm:col-span-2">
-              <label className="block text-sm font-semibold text-slate-800">Message *</label>
+              <label className="block text-sm font-semibold text-gray-800">Message *</label>
               <textarea
                 name="message"
                 rows={5}
                 required
                 placeholder="Please leave your message"
-                className="mt-2 w-full rounded-lg border border-slate-200 bg-white py-3 px-4 text-slate-700 placeholder-slate-400 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+                className="mt-2 w-full rounded-lg border border-gray-200 bg-white py-3 px-4 text-gray-700 placeholder-gray-400 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
               />
             </div>
 
@@ -162,7 +162,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-blue-700 px-8 py-3 text-white font-semibold hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 disabled:cursor-not-allowed disabled:bg-slate-400"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg bg-sky-700 px-8 py-3 text-white font-semibold hover:bg-sky-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 disabled:cursor-not-allowed disabled:bg-gray-400"
               >
                 {status === "sending" ? "Sending..." : "Submit"}
               </button>
@@ -171,7 +171,7 @@ const Contact = () => {
               <p
                 className={`sm:col-span-2 rounded-lg px-4 py-3 text-sm font-medium ${
                   status === "sent"
-                    ? "bg-emerald-50 text-emerald-800"
+                    ? "bg-sky-50 text-sky-800"
                     : "bg-red-50 text-red-800"
                 }`}
               >
@@ -208,14 +208,14 @@ const Contact = () => {
             {/* Overlay info bar */}
             <div className="absolute left-0 right-0 bottom-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent p-4 sm:p-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
               <div className="text-white">
-                <p className="text-xs uppercase tracking-widest text-teal-200">Our Location</p>
+                <p className="text-xs uppercase tracking-widest text-sky-200">Our Location</p>
                 <p className="text-sm sm:text-base font-medium">{ADDRESS_TEXT}</p>
               </div>
               <a
                 href={DIRECTIONS_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 shadow"
+                className="inline-flex items-center justify-center rounded-lg bg-sky-600 hover:bg-sky-700 text-white text-sm font-semibold px-4 py-2 shadow"
               >
                 Get Directions
               </a>

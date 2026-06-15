@@ -137,7 +137,7 @@ const ServiceItems = () => {
   return (
     <section className="relative bg-white py-28 px-6 overflow-hidden">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-sky-100 rounded-full blur-[180px] opacity-40 -z-10" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-green-100 rounded-full blur-[160px] opacity-40 -z-10" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-sky-100 rounded-full blur-[160px] opacity-40 -z-10" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         <motion.div

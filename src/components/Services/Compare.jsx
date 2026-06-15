@@ -11,13 +11,13 @@ const row = {
   }),
 };
 
-const Check = ({ className = "h-5 w-5 text-teal-700" }) => (
+const Check = ({ className = "h-5 w-5 text-sky-700" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor">
     <path strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" d="M4 12l5 5 11-11" />
   </svg>
 );
 
-const Cross = ({ className = "h-5 w-5 text-rose-600" }) => (
+const Cross = ({ className = "h-5 w-5 text-red-600" }) => (
   <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor">
     <path strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6l-12 12" />
   </svg>
@@ -89,18 +89,18 @@ const Compare = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-slate-200 bg-white shadow-sm"
+          className="rounded-2xl border border-gray-200 bg-white shadow-sm"
         >
           {/* Header */}
           <div className="px-6 md:px-10 pt-8">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="inline-flex items-center gap-2 rounded-full border border-teal-600/20 bg-teal-50 px-3 py-1">
-                <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-teal-700">Comparison</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-sky-600/20 bg-sky-50 px-3 py-1">
+                <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-sky-700">Comparison</span>
               </div>
-              <h2 className="mt-4 text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-slate-900">
+              <h2 className="mt-4 text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-gray-900">
                 How We Compare
               </h2>
-              <p className="mt-3 text-slate-700 text-base sm:text-lg">
+              <p className="mt-3 text-gray-700 text-base sm:text-lg">
                 Real differences that matter to asset life, safety and compliance. No hype, just delivery.
               </p>
             </div>
@@ -110,17 +110,17 @@ const Compare = () => {
           <div className="mt-8 overflow-x-auto">
             <table className="w-full border-collapse text-sm sm:text-base">
               <thead>
-                <tr className="bg-slate-50 text-slate-700">
-                  <th className="text-left font-semibold px-6 md:px-10 py-4 border-b border-slate-200">Capability</th>
-                  <th className="text-center font-semibold px-4 py-4 border-b border-slate-200">
+                <tr className="bg-gray-50 text-gray-700">
+                  <th className="text-left font-semibold px-6 md:px-10 py-4 border-b border-gray-200">Capability</th>
+                  <th className="text-center font-semibold px-4 py-4 border-b border-gray-200">
                     <span className="inline-flex items-center gap-2">
-                      <span className="h-2.5 w-2.5 rounded-full bg-teal-600" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-sky-600" />
                       All Building &amp; Property Services
                     </span>
                   </th>
-                  <th className="text-center font-semibold px-4 py-4 border-b border-slate-200">
+                  <th className="text-center font-semibold px-4 py-4 border-b border-gray-200">
                     <span className="inline-flex items-center gap-2">
-                      <span className="h-2.5 w-2.5 rounded-full bg-slate-400" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-gray-400" />
                       Typical Contractor
                     </span>
                   </th>
@@ -135,20 +135,20 @@ const Compare = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={row}
-                    className="even:bg-white odd:bg-slate-50/40 hover:bg-teal-50/40 transition-colors"
+                    className="even:bg-white odd:bg-gray-50/40 hover:bg-sky-50/40 transition-colors"
                   >
                     <td className="align-top px-6 md:px-10 py-4">
-                      <div className="font-medium text-slate-900">{f.label}</div>
-                      {f.note && <div className="mt-1 text-slate-600 text-xs sm:text-sm">{f.note}</div>}
+                      <div className="font-medium text-gray-900">{f.label}</div>
+                      {f.note && <div className="mt-1 text-gray-600 text-xs sm:text-sm">{f.note}</div>}
                     </td>
                     <td className="px-4 py-4 text-center">
                       {f.us ? <Check /> : <Cross />}
                     </td>
                     <td className="px-4 py-4 text-center">
                       {typeof f.them === "boolean" ? (
-                        f.them ? <Check className="h-5 w-5 text-slate-600" /> : <Cross className="h-5 w-5 text-rose-500" />
+                        f.them ? <Check className="h-5 w-5 text-gray-600" /> : <Cross className="h-5 w-5 text-red-500" />
                       ) : (
-                        <span className="text-slate-600 text-xs sm:text-sm">{f.them}</span>
+                        <span className="text-gray-600 text-xs sm:text-sm">{f.them}</span>
                       )}
                     </td>
                   </motion.tr>
@@ -158,20 +158,20 @@ const Compare = () => {
           </div>
 
           {/* CTA strip */}
-          <div className="px-6 md:px-10 py-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-slate-700 text-sm sm:text-base">
+          <div className="px-6 md:px-10 py-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-gray-700 text-sm sm:text-base">
               Need a like-for-like quote or scope review? We’ll price transparently and provide documentation.
             </p>
             <div className="flex items-center gap-3">
               <a
                 href="tel:+61272293522"
-                className="inline-flex items-center justify-center rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-teal-600/20 transition hover:bg-teal-700"
+                className="inline-flex items-center justify-center rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-sky-600/20 transition hover:bg-sky-700"
               >
                 Call 02 7229 3522
               </a>
               <a
                 href="mailto:admin@allbuildingservices.com.au"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                className="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition hover:bg-gray-50"
               >
                 Email our team
               </a>
