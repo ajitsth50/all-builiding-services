@@ -111,22 +111,22 @@ const StatCard = ({ label, value, suffix, icon }) => {
   return (
     <motion.div
       variants={item}
-      className="group relative flex flex-col items-center justify-center min-h-[220px] rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition hover:shadow-md"
-    >
-      <div className="mb-4 inline-flex items-center justify-center rounded-xl bg-sky-50 p-3 text-sky-700 ring-1 ring-inset ring-sky-600/20">
+    className="group relative flex min-h-[190px] flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 text-left shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+  >
+      <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md bg-sky-50 text-sky-700 ring-1 ring-inset ring-sky-600/20">
         {icon}
       </div>
 
       <VisibilitySensor partialVisibility offset={{ bottom: 150 }} onChange={setVisible} delayedCall>
         {({ isVisible }) => (
-          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 tabular-nums mb-2">
+          <h3 className="text-3xl font-extrabold tracking-tight text-gray-950 tabular-nums">
             {isVisible ? <CountUp key={loopKey} end={value} duration={2.2} separator="," /> : 0}
             <span className="ml-1 align-middle text-sky-700">{suffix}</span>
           </h3>
         )}
       </VisibilitySensor>
 
-      <p className="mt-2 text-xs sm:text-sm font-medium text-slate-700 leading-tight line-clamp-2">{label}</p>
+      <p className="mt-3 text-base font-semibold text-gray-700 leading-tight">{label}</p>
     </motion.div>
   );
 };
@@ -134,28 +134,25 @@ const StatCard = ({ label, value, suffix, icon }) => {
 /* ---------- Section ---------- */
 const AboutStats = () => {
   return (
-    <section className="relative bg-white py-20">
-      {/* background accent */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-[10%] h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-sky-500/10 blur-3xl" />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="relative border-y border-gray-200 bg-gray-50 py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.4 }}
-          className="text-center"
+          className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
         >
-          <p className="inline-flex items-center rounded-full border border-sky-600/25 bg-sky-50/60 px-3 py-1 text-[12px] font-semibold tracking-[0.18em] uppercase text-sky-700">
-            Our Achievements
-          </p>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-slate-900">
-            Proven Performance & Trusted Results
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-700 text-lg">
+          <div>
+            <p className="text-xs font-bold tracking-[0.18em] uppercase text-sky-700">
+              Our Achievements
+            </p>
+            <h2 className="mt-3 font-montserrat text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-gray-950">
+              Proven Performance & Trusted Results
+            </h2>
+          </div>
+          <p className="max-w-3xl text-gray-700 text-xl leading-9 lg:border-l lg:border-gray-200 lg:pl-8">
             Over a decade of excellence in building, maintenance, and remedial services across Sydney.
           </p>
         </motion.div>
@@ -166,7 +163,7 @@ const AboutStats = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-12 grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {STATS.map((stat) => (
             <StatCard key={stat.label} {...stat} />

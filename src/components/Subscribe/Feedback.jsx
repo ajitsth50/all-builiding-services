@@ -197,7 +197,7 @@ const Feedback = () => {
   };
 
   return (
-    <section className="relative bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="relative border-y border-gray-200 bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -205,19 +205,22 @@ const Feedback = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 md:mb-14"
+          className="mx-auto mb-10 max-w-3xl text-center md:mb-14"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 font-montserrat">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-sky-700">
+            Client feedback
+          </p>
+          <h2 className="mt-3 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-950 mb-4 font-montserrat">
             What Our Clients Say
           </h2>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-source-sans">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-sourceSans leading-9">
             Trusted by residential, commercial, and strata clients across Sydney.
             Hear from those we've served.
           </p>
         </motion.div>
 
         {/* Slider */}
-        <div className="relative overflow-hidden rounded-xl">
+        <div className="relative overflow-hidden rounded-lg">
           <motion.div
             className="flex"
             animate={{ x: `-${currentIndex * slideWidth}%` }}
@@ -229,25 +232,26 @@ const Feedback = () => {
                 className="flex-shrink-0 px-2 md:px-3 lg:px-4 flex items-stretch"
                 style={{ width: `${slideWidth}%` }}
               >
-                <div className="bg-white border border-sky-100 rounded-xl p-4 md:p-5 shadow-md hover:shadow-lg transition-shadow duration-300 w-full flex flex-col">
+                <div className="flex w-full flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition duration-200 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)] md:p-5">
                   <img
                     src={testimonial.image.src}
                     alt={`${testimonial.name} feedback`}
-                    className="w-full h-40 sm:h-44 md:h-48 object-cover rounded-lg mb-3 md:mb-4"
+                    className="w-full h-40 sm:h-44 md:h-48 object-cover rounded-md mb-3 md:mb-4"
+                    loading="lazy"
                   />
                   <div className="flex items-center mb-2 md:mb-3">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <FaStar key={i} className="text-yellow-400 text-xs md:text-sm" />
+                      <FaStar key={i} className="text-sky-600 text-xs md:text-sm" />
                     ))}
                   </div>
-                  <p className="text-gray-700 italic mb-3 md:mb-4 font-source-sans leading-relaxed flex-grow text-sm md:text-base">
+                  <p className="text-gray-700 mb-3 md:mb-4 font-sourceSans leading-relaxed flex-grow text-base md:text-lg">
                     "{testimonial.comment}"
                   </p>
                   <div className="text-right mt-auto">
-                    <h4 className="font-semibold text-gray-800 font-montserrat text-sm md:text-base">
+                    <h4 className="font-semibold text-gray-950 font-montserrat text-sm md:text-base">
                       {testimonial.name}
                     </h4>
-                    <p className="text-xs md:text-sm text-gray-500">
+                    <p className="text-sm md:text-base text-gray-500">
                       {testimonial.date}
                     </p>
                   </div>
@@ -259,14 +263,16 @@ const Feedback = () => {
           {/* Arrows */}
           <button
             onClick={prevSlide}
-            className="hidden sm:flex absolute left-3 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-md transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous testimonial"
+            className="hidden sm:flex absolute left-3 md:left-4 top-1/2 h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-gray-200 bg-white/95 shadow-sm transition-colors z-10 hover:bg-sky-50 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentIndex === 0}
           >
             <FaChevronLeft className="text-gray-600 text-sm md:text-base" />
           </button>
           <button
             onClick={nextSlide}
-            className="hidden sm:flex absolute right-3 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-md transition-colors z-10 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next testimonial"
+            className="hidden sm:flex absolute right-3 md:right-4 top-1/2 h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-gray-200 bg-white/95 shadow-sm transition-colors z-10 hover:bg-sky-50 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={currentIndex === maxIndex}
           >
             <FaChevronRight className="text-gray-600 text-sm md:text-base" />
@@ -279,8 +285,9 @@ const Feedback = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-colors ${
-                index === currentIndex ? "bg-sky-500" : "bg-gray-300"
+              aria-label={`Go to testimonial slide ${index + 1}`}
+              className={`h-3 rounded-full transition-all ${
+                index === currentIndex ? "w-8 bg-sky-600" : "w-3 bg-gray-300"
               }`}
             />
           ))}

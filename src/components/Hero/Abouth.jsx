@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 import pica from "../../assets/clients/pica.PNG";
 import bcs from "../../assets/clients/bcs.PNG";
@@ -19,91 +20,163 @@ import pica2 from "../../assets/clients/pica 2.png";
 import strata2 from "../../assets/clients/strata 2.png";
 import whelan from "../../assets/clients/whelan.png";
 
+const clients = [
+  { src: pica, alt: "PICA" },
+  { src: pica2, alt: "PICA 2" },
+  { src: bcs, alt: "BCS" },
+  { src: strata, alt: "Strata" },
+  { src: strata2, alt: "Strata 2" },
+  { src: qbe, alt: "QBE" },
+  { src: bme, alt: "BME" },
+  { src: bright, alt: "Bright" },
+  { src: choice, alt: "Choice" },
+  { src: excel, alt: "Excel" },
+  { src: jame, alt: "Jame" },
+  { src: life, alt: "Life" },
+  { src: luna, alt: "Luna" },
+  { src: net, alt: "Net" },
+  { src: other, alt: "Other" },
+  { src: whelan, alt: "Whelan" },
+];
+
+const getItemsPerSlide = (width) => {
+  if (width >= 1024) return 8;
+  if (width >= 640) return 4;
+  return 2;
+};
+
 const Abouth = () => {
-  const clients = [
-    { src: pica, alt: "PICA" },
-    { src: pica2, alt: "PICA 2" },
-    { src: bcs, alt: "BCS" },
-    { src: strata, alt: "Strata" },
-    { src: strata2, alt: "Strata 2" },
-    { src: qbe, alt: "QBE" },
-    { src: bme, alt: "BME" },
-    { src: bright, alt: "Bright" },
-    { src: choice, alt: "Choice" },
-    { src: excel, alt: "Excel" },
-    { src: jame, alt: "Jame" },
-    { src: life, alt: "Life" },
-    { src: luna, alt: "Luna" },
-    { src: net, alt: "Net" },
-    { src: other, alt: "Other" },
-    { src: whelan, alt: "Whelan" },
-  ];
+  const [itemsPerSlide, setItemsPerSlide] = useState(8);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Split into two rows
-  const middleIndex = Math.ceil(clients.length / 2);
-  const row1 = clients.slice(0, middleIndex);
-  const row2 = clients.slice(middleIndex);
+  useEffect(() => {
+    const updateItemsPerSlide = () => {
+      setItemsPerSlide(getItemsPerSlide(window.innerWidth));
+    };
 
-  // Flowing / marquee-style row (plain JS, no types)
-  const renderMarqueeRow = (rowClients, keyPrefix, reverse = false) => {
-    const marqueeItems = [...rowClients, ...rowClients]; // duplicate for seamless loop
+    updateItemsPerSlide();
+    window.addEventListener("resize", updateItemsPerSlide);
+    return () => window.removeEventListener("resize", updateItemsPerSlide);
+  }, []);
 
-    return (
-      <div className="overflow-hidden">
-        <motion.div
-          className="flex items-center gap-8 md:gap-12"
-          animate={{
-            x: reverse ? ["-50%", "0%"] : ["0%", "-50%"],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          {marqueeItems.map((client, index) => (
-            <div
-              key={`${keyPrefix}-${index}`}
-              className="flex justify-center items-center px-4 py-2 md:px-6 md:py-3 bg-gray-50 rounded-xl shadow-sm hover:shadow-md hover:bg-sky-50 transition-all duration-300 min-w-[120px] md:min-w-[150px]"
-            >
-              <img
-                src={client.src.src}
-                alt={client.alt}
-                className="h-10 md:h-14 w-auto object-contain"
-              />
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    );
+  const slides = useMemo(() => {
+    const grouped = [];
+    for (let i = 0; i < clients.length; i += itemsPerSlide) {
+      grouped.push(clients.slice(i, i + itemsPerSlide));
+    }
+    return grouped;
+  }, [itemsPerSlide]);
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [itemsPerSlide]);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    const timer = window.setInterval(() => {
+      setCurrentSlide((slide) => (slide + 1) % slides.length);
+    }, 4500);
+    return () => window.clearInterval(timer);
+  }, [slides.length]);
+
+  const goToPrevious = () => {
+    setCurrentSlide((slide) => (slide === 0 ? slides.length - 1 : slide - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((slide) => (slide + 1) % slides.length);
   };
 
   return (
-    <section className="relative bg-white py-14 md:py-20 px-4 sm:px-6 lg:px-8">
-      {/* Heading */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-10 md:mb-14"
-      >
-        <p className="text-sm uppercase tracking-[0.2em] text-sky-500 mb-2 font-semibold">
-          Trusted by leading partners
-        </p>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 font-montserrat">
-          Our Client Partners
-        </h2>
-        <p className="mt-3 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
-          We collaborate with a diverse range of insurers and partners to deliver
-          reliable, customer-first solutions.
-        </p>
-      </motion.div>
+    <section className="relative bg-white px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35 }}
+          className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
+        >
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-700">
+              Trusted by leading partners
+            </p>
+            <h2 className="mt-3 font-montserrat text-3xl font-extrabold tracking-tight text-gray-950 sm:text-4xl">
+              Our Client Partners
+            </h2>
+          </div>
+          <p className="max-w-3xl text-lg leading-9 text-gray-600 lg:border-l lg:border-gray-200 lg:pl-8">
+            We collaborate with a diverse range of insurers and partners to deliver
+            reliable, customer-first solutions.
+          </p>
+        </motion.div>
 
-      {/* Flowing Logos */}
-      <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
-        {renderMarqueeRow(row1, "row1", false)}
-        {renderMarqueeRow(row2, "row2", true)}
+        <div className="mt-10">
+          <div className="relative overflow-hidden rounded-xl">
+            <motion.div
+              className="flex"
+              animate={{ x: `-${currentSlide * 100}%` }}
+              transition={{ duration: 0.45, ease: "easeInOut" }}
+            >
+              {slides.map((slide, slideIndex) => (
+                <div key={slideIndex} className="min-w-full">
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-4">
+                    {slide.map((client) => (
+                      <div
+                        key={client.alt}
+                        className="flex min-h-28 items-center justify-center rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition duration-200 hover:border-sky-200 hover:shadow-md"
+                      >
+                        <img
+                          src={client.src.src}
+                          alt={client.alt}
+                          className="max-h-14 w-auto object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {slides.length > 1 ? (
+              <>
+                <button
+                  type="button"
+                  onClick={goToPrevious}
+                  aria-label="Previous client partners"
+                  className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-gray-200 bg-white/95 text-gray-700 shadow-sm transition hover:bg-sky-50 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+                  <FaChevronLeft className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={goToNext}
+                  aria-label="Next client partners"
+                  className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-gray-200 bg-white/95 text-gray-700 shadow-sm transition hover:bg-sky-50 hover:text-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                >
+                  <FaChevronRight className="h-4 w-4" />
+                </button>
+              </>
+            ) : null}
+          </div>
+
+          {slides.length > 1 ? (
+            <div className="mt-6 flex justify-center gap-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Show client partner slide ${index + 1}`}
+                  className={`h-2.5 rounded-full transition-all ${
+                    index === currentSlide ? "w-8 bg-sky-700" : "w-2.5 bg-gray-300 hover:bg-gray-400"
+                  }`}
+                />
+              ))}
+            </div>
+          ) : null}
+        </div>
       </div>
     </section>
   );
