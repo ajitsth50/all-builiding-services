@@ -1,4 +1,5 @@
 import "../index.css";
+import Script from "next/script";
 
 const siteUrl = "https://www.allbuildingservices.com.au";
 const businessName = "All Building & Property Services";
@@ -6,6 +7,7 @@ const defaultTitle = "Sydney Remedial & Strata Building Maintenance | ABPS";
 const defaultDescription =
   "Remedial construction and property maintenance for Sydney Class 2 strata buildings — waterproofing, concrete repairs, leak detection and fire compliance.";
 const defaultOgImage = "/og-image.png";
+const googleAnalyticsId = "G-0YDMV0P2GZ";
 const socialProfiles = [
   "https://www.facebook.com/allbuildingservices.com.au",
   "https://www.instagram.com/abps.sydney",
@@ -119,7 +121,21 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
