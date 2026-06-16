@@ -6,6 +6,11 @@ const defaultTitle = "Sydney Remedial & Strata Building Maintenance | ABPS";
 const defaultDescription =
   "Remedial construction and property maintenance for Sydney Class 2 strata buildings — waterproofing, concrete repairs, leak detection and fire compliance.";
 const defaultOgImage = "/og-image.png";
+const socialProfiles = [
+  "https://www.facebook.com/allbuildingservices.com.au",
+  "https://www.instagram.com/abps.sydney",
+  "https://www.linkedin.com/company/all-building-and-property-services/",
+];
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -43,39 +48,61 @@ export const metadata = {
   },
 };
 
-const businessSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${siteUrl}/#business`,
-  name: businessName,
-  url: siteUrl,
-  telephone: "+61272293522",
-  email: "admin@allbuildingservices.com.au",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Level 1, 63-73 Ann Street",
-    addressLocality: "Surry Hills",
-    addressRegion: "NSW",
-    postalCode: "2010",
-    addressCountry: "AU",
-  },
-  areaServed: [
+  "@graph": [
     {
-      "@type": "City",
-      name: "Sydney",
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: businessName,
+      alternateName: "ABPS",
+      url: siteUrl,
+      publisher: {
+        "@id": `${siteUrl}/#business`,
+      },
+      inLanguage: "en-AU",
     },
     {
-      "@type": "AdministrativeArea",
-      name: "New South Wales",
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+      "@id": `${siteUrl}/#business`,
+      name: businessName,
+      alternateName: "ABPS",
+      description: defaultDescription,
+      url: siteUrl,
+      logo: `${siteUrl}/logo.png`,
+      image: `${siteUrl}${defaultOgImage}`,
+      telephone: "+61272293522",
+      email: "admin@allbuildingservices.com.au",
+      priceRange: "$$",
+      sameAs: socialProfiles,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Level 1, 63-73 Ann Street",
+        addressLocality: "Surry Hills",
+        addressRegion: "NSW",
+        postalCode: "2010",
+        addressCountry: "AU",
+      },
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Sydney",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "New South Wales",
+        },
+      ],
+      serviceType: [
+        "Remedial construction",
+        "Strata building maintenance",
+        "Property maintenance",
+        "Waterproofing",
+        "Concrete repairs",
+        "Leak detection",
+        "Fire order compliance works",
+      ],
     },
-  ],
-  serviceType: [
-    "Remedial construction",
-    "Property maintenance",
-    "Waterproofing",
-    "Concrete repairs",
-    "Fire order compliance works",
-    "Strata maintenance",
   ],
 };
 
@@ -89,7 +116,7 @@ export default function RootLayout({ children }) {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>{children}</body>

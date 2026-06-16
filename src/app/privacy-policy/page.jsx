@@ -1,7 +1,9 @@
 import Privacy from "../../views/terms/Privacy";
 
 export const metadata = {
-  title: "Privacy Policy",
+  title: {
+    absolute: "Privacy Policy | ABPS",
+  },
   description:
     "Privacy Policy for All Building & Property Services Pty Ltd, covering website enquiries, quote requests and service-related information handling.",
   alternates: {
