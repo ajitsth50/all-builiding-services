@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import logo from "../../assets/logo.png";
@@ -91,7 +92,13 @@ const Navbar = () => {
         >
           <Link href="/" className="flex h-full items-center gap-3" aria-label="All Building and Property Services home">
             <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm">
-              <img src={logo.src} alt="All Building and Property Services logo" className="h-12 w-12 object-contain" />
+              <Image
+                src={logo}
+                alt="All Building and Property Services logo"
+                className="h-12 w-12 object-contain"
+                sizes="48px"
+                priority
+              />
             </span>
             <span className="max-w-[160px] text-sm font-bold leading-tight tracking-tight text-gray-900 sm:max-w-[220px]">
               <span className="sm:hidden">ABPS</span>

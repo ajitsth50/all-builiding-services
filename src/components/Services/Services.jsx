@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong, FaCircleCheck } from "react-icons/fa6";
 
@@ -104,9 +105,11 @@ const Services = () => {
               className="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.10)]"
             >
               <div className="relative block aspect-[16/9] overflow-hidden bg-gray-100 lg:aspect-[4/3]">
-                <img
-                  src={service.image.src}
+                <Image
+                  src={service.image}
                   alt={service.title}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 33vw"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950/35 via-transparent to-transparent" />

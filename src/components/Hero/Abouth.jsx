@@ -2,6 +2,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import Image from "next/image";
 
 import pica from "../../assets/clients/pica.PNG";
 import bcs from "../../assets/clients/bcs.PNG";
@@ -126,11 +127,11 @@ const Abouth = () => {
                         key={client.alt}
                         className="flex min-h-28 items-center justify-center rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition duration-200 hover:border-sky-200 hover:shadow-md"
                       >
-                        <img
-                          src={client.src.src}
+                        <Image
+                          src={client.src}
                           alt={client.alt}
-                          className="max-h-14 w-auto object-contain"
-                          loading="lazy"
+                          sizes="(max-width: 639px) 40vw, (max-width: 1023px) 20vw, 12vw"
+                          className="h-auto max-h-14 w-auto object-contain"
                         />
                       </div>
                     ))}

@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 
@@ -173,11 +174,15 @@ const ServiceItems = () => {
                 index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
               } items-center gap-10 lg:gap-20 text-left group`}
             >
-              <img
-                src={service.image.src}
-                alt={service.title}
-                className="w-full lg:w-[600px] h-[400px] object-cover object-center rounded-3xl shadow-xl group-hover:scale-105 transition-transform duration-500 border border-gray-200"
-              />
+              <div className="relative h-[400px] w-full shrink-0 overflow-hidden rounded-3xl border border-gray-200 shadow-xl lg:w-[600px]">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 600px"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
               <div className="max-w-xl text-center lg:text-left">
                 <h3 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 leading-tight font-montserrat">

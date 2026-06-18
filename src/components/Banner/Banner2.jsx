@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import choose from "../../assets/choose.jpg";
 
 /* ---------- Animations ---------- */
@@ -171,10 +172,12 @@ const Banner2 = () => {
   variants={sectionFade}
   className="lg:col-span-3"
 >
-  <div className="relative overflow-hidden rounded-2xl border border-gray-200 shadow-md">
-    <img
-      className="w-full h-[500px] object-cover"  
-      src={choose.src}
+  <div className="relative h-[500px] overflow-hidden rounded-2xl border border-gray-200 shadow-md">
+    <Image
+      fill
+      sizes="(max-width: 1023px) 100vw, 58vw"
+      className="object-cover"
+      src={choose}
       alt="Remedial repairs and maintenance in progress"
     />
     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 via-transparent to-transparent" />

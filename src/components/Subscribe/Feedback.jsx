@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
 import feedback1 from "../../assets/feedback/1.jpeg";
 import feedback2 from "../../assets/feedback/2.jpeg";
 import feedback3 from "../../assets/feedback/3.jpeg";
@@ -233,12 +234,15 @@ const Feedback = () => {
                 style={{ width: `${slideWidth}%` }}
               >
                 <div className="flex w-full flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition duration-200 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)] md:p-5">
-                  <img
-                    src={testimonial.image.src}
-                    alt={`${testimonial.name} feedback`}
-                    className="w-full h-40 sm:h-44 md:h-48 object-cover rounded-md mb-3 md:mb-4"
-                    loading="lazy"
-                  />
+                  <div className="relative mb-3 h-40 overflow-hidden rounded-md sm:h-44 md:mb-4 md:h-48">
+                    <Image
+                      src={testimonial.image}
+                      alt={`${testimonial.name} feedback`}
+                      fill
+                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex items-center mb-2 md:mb-3">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <FaStar key={i} className="text-sky-600 text-xs md:text-sm" />

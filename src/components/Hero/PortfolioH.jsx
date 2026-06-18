@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Navbar from "../Navbar/Navbar";
 
 /* ------------------------------
@@ -433,7 +434,7 @@ const projects = [
 /* ------------------------------
    CARD (ROBUST HOVER SLIDER)
 --------------------------------*/
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, priority = false }) => {
   const [slide, setSlide] = useState(0);
   const timerRef = useRef(null);
 
@@ -470,13 +471,14 @@ const ProjectCard = ({ project }) => {
           style={{ willChange: "transform" }}
         >
           {validImages.map((img, i) => (
-            <div key={i} className="basis-full shrink-0 h-full w-full">
-              <img
-                src={img.src}
+            <div key={i} className="relative h-full w-full basis-full shrink-0">
+              <Image
+                src={img}
                 alt={`${project.title} ${i + 1}`}
-                className="h-full w-full object-cover"
-                loading={i === 0 ? "eager" : "lazy"}
-                decoding="async"
+                fill
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                className="object-cover"
+                priority={priority && i === 0}
               />
             </div>
           ))}
@@ -540,8 +542,8 @@ const PortfolioH = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filtered.map((p) => (
-          <ProjectCard key={p.title} project={p} />
+        {filtered.map((p, index) => (
+          <ProjectCard key={p.title} project={p} priority={index === 0} />
         ))}
       </div>
     </section>
