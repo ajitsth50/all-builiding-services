@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
 
 /* ---------- Configurable stats ---------- */
 const STATS = [
@@ -106,25 +105,39 @@ function useLoopingKey(isVisible, loop = true, ms = 7000) {
 /* ---------- Stat Card ---------- */
 const StatCard = ({ label, value, suffix, icon }) => {
   const [visible, setVisible] = useState(false);
+  const cardRef = useRef(null);
   const loopKey = useLoopingKey(visible, true, 8000); // set false if you don’t want repeat animation
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      {
+        rootMargin: "0px 0px -150px 0px",
+        threshold: 0.1,
+      }
+    );
+
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <motion.div
+      ref={cardRef}
       variants={item}
-    className="group relative flex min-h-[190px] flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 text-left shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
-  >
+      className="group relative flex min-h-[190px] flex-col justify-between rounded-lg border border-gray-200 bg-white p-6 text-left shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.08)]"
+    >
       <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-md bg-sky-50 text-sky-700 ring-1 ring-inset ring-sky-600/20">
         {icon}
       </div>
 
-      <VisibilitySensor partialVisibility offset={{ bottom: 150 }} onChange={setVisible} delayedCall>
-        {({ isVisible }) => (
-          <h3 className="text-3xl font-extrabold tracking-tight text-gray-950 tabular-nums">
-            {isVisible ? <CountUp key={loopKey} end={value} duration={2.2} separator="," /> : 0}
-            <span className="ml-1 align-middle text-sky-700">{suffix}</span>
-          </h3>
-        )}
-      </VisibilitySensor>
+      <h3 className="text-3xl font-extrabold tracking-tight text-gray-950 tabular-nums">
+        {visible ? <CountUp key={loopKey} end={value} duration={2.2} separator="," /> : 0}
+        <span className="ml-1 align-middle text-sky-700">{suffix}</span>
+      </h3>
 
       <p className="mt-3 text-base font-semibold text-gray-700 leading-tight">{label}</p>
     </motion.div>
