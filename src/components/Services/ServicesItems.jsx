@@ -33,10 +33,12 @@ const services = [
     id: "remedial",
     title: "Remedial Services",
     image: remedialImg,
+    imageFit: "cover",
     description:
       "Specialist remedial construction and structural rectification for strata buildings, apartments, balconies, façades and concrete structures.",
     highlights: [
       "Concrete cancer repair & spalling restoration",
+      "Magnesite removal",
       "Balcony & podium deck structural repairs",
       "Façade & cladding repairs / restoration",
       "Balcony & terrace waterproofing",
@@ -55,10 +57,14 @@ const services = [
     id: "leak-detection",
     title: "Leak Detection & Reporting",
     image: leakImg,
+    imageFit: "contain",
     description:
       "Detailed leak investigations and building diagnostics to identify the source, scope and rectification path with documented reports for owners corporations and strata managers.",
     highlights: [
       "Leak ingress detailed investigation with comprehensive written report",
+      "Borescope camera investigation",
+      "Water hose & dye testing",
+      "Moisture mapping",
       "Scope of works preparation for leak rectification",
       "Defect inspection reports — pre & post-handover",
       "Building condition assessments & reports",
@@ -68,18 +74,34 @@ const services = [
     id: "compliance",
     title: "Compliance & Safety Works",
     image: safetyImg,
+    imageFit: "contain",
     description:
       "Essential safety upgrades and compliance rectification works to meet fire orders, AFSS requirements and Australian building standards.",
     highlights: [
-      "Fire order works — including AFSS rectification & repairs",
-      "Handrail & balustrade structural upgrades",
-      "Pool surrounds & concourse repairs",
+      { heading: "Fire & Passive Fire" },
+      "Fire Order & AFSS Rectification Works",
+      "Fire-Rated Penetration Sealing & Fire Collars",
+      "Fire & Smoke Door Remediation",
+      "Fire-Rated Wall & Ceiling Reinstatement",
+      { heading: "Barriers & Balustrades" },
+      "Balustrade & Barrier Upgrades to NCC 2022",
+      "Handrail Structural Repairs & Replacement",
+      { heading: "Height & Fall Safety" },
+      "Roof Anchor & Static Line Installation",
+      "Guardrail & Edge Protection Systems",
+      { heading: "Access & Wet Areas" },
+      "Pool Surround & Concourse Repairs",
+      "Accessibility Upgrades (Ramps, Handrails, Thresholds)",
+      { heading: "Hazardous Materials" },
+      "Asbestos Make-Safe & Licensed Removal Coordination",
+      "Essential Safety Measure Rectification",
     ],
   },
   {
     id: "renovation",
     title: "Renovation & Fit-Out Services",
     image: renoImg,
+    imageFit: "contain",
     description:
       "Design-led renovations and full fit-outs for apartments, common areas and commercial spaces — delivered to standard, on schedule, and compliant with strata and building regulations.",
     highlights: [
@@ -99,6 +121,7 @@ const services = [
     id: "maintenance",
     title: "General Maintenance & Handyman Services",
     image: handyImg,
+    imageFit: "contain",
     description:
       "Reliable, on-call maintenance and handyman services for apartment buildings, strata complexes and owners corporations — keeping common areas safe, functional and well-presented.",
     highlights: [
@@ -174,13 +197,17 @@ const ServiceItems = () => {
                 index % 2 !== 0 ? "lg:flex-row-reverse" : "lg:flex-row"
               } items-center gap-10 lg:gap-20 text-left group`}
             >
-              <div className="relative h-[400px] w-full shrink-0 overflow-hidden rounded-3xl border border-gray-200 shadow-xl lg:w-[600px]">
+              <div className="relative h-64 w-full shrink-0 overflow-hidden rounded-3xl border border-gray-200 bg-slate-50 shadow-xl sm:h-80 lg:h-[400px] lg:w-[600px]">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   sizes="(max-width: 1023px) 100vw, 600px"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  className={`transition-transform duration-500 group-hover:scale-[1.02] ${
+                    service.imageFit === "contain"
+                      ? "object-contain p-2"
+                      : "object-cover object-center"
+                  }`}
                 />
               </div>
 
@@ -196,15 +223,24 @@ const ServiceItems = () => {
                 </p>
 
                 <ul className="text-left space-y-3 text-gray-800 font-medium text-base font-source-sans">
-                  {service.highlights.map((item, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3 group-hover:translate-x-1 transition-all duration-300"
-                    >
-                      <span className="text-sky-600 mt-1">✔</span>
-                      <span className="leading-snug">{item}</span>
-                    </li>
-                  ))}
+                  {service.highlights.map((item, idx) =>
+                    item.heading ? (
+                      <li
+                        key={item.heading}
+                        className="pt-4 text-sm font-bold uppercase tracking-wider text-sky-800 first:pt-0"
+                      >
+                        {item.heading}
+                      </li>
+                    ) : (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 group-hover:translate-x-1 transition-all duration-300"
+                      >
+                        <span className="text-sky-600 mt-1">✔</span>
+                        <span className="leading-snug">{item}</span>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </motion.div>

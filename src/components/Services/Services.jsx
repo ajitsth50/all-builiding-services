@@ -14,9 +14,11 @@ const services = [
     title: "Remedial Services",
     image: remedialImg,
     description: "Structural and fabric repairs for high-use strata, commercial and residential assets.",
+    imageFit: "cover",
     items: [
       "Concrete Cancer Repair & Spalling Restoration",
       "Concrete Driveways",
+      "Magnesite Removal",
       "Balcony & Roof Waterproofing",
       "Basement & Carpark Waterproofing",
       "Wet Area Waterproofing",
@@ -32,8 +34,12 @@ const services = [
     title: "Leak Detection & Reporting",
     image: leakImg,
     description: "Investigation and reporting for managers who need evidence before approving works.",
+    imageFit: "contain",
     items: [
       "Leak Ingress Detailed Investigation With Written Report",
+      "Borescope Camera Investigation",
+      "Water Hose & Dye Testing",
+      "Moisture Mapping",
       "Scope Of Works For Leak Rectification",
       "Defect Inspection Reports",
       "Pre & Post-Handover Reports",
@@ -44,10 +50,25 @@ const services = [
     title: "Compliance & Safety Works",
     image: complianceImg,
     description: "Practical rectification works for risk, access and compliance-driven building priorities.",
+    imageFit: "contain",
     items: [
-      "Fire Orders Including AFSS Repairs",
-      "Handrail & Balustrade Structural Upgrades",
-      "Pool Surrounds & Concourse Repairs",
+      { heading: "Fire & Passive Fire" },
+      "Fire Order & AFSS Rectification Works",
+      "Fire-Rated Penetration Sealing & Fire Collars",
+      "Fire & Smoke Door Remediation",
+      "Fire-Rated Wall & Ceiling Reinstatement",
+      { heading: "Barriers & Balustrades" },
+      "Balustrade & Barrier Upgrades to NCC 2022",
+      "Handrail Structural Repairs & Replacement",
+      { heading: "Height & Fall Safety" },
+      "Roof Anchor & Static Line Installation",
+      "Guardrail & Edge Protection Systems",
+      { heading: "Access & Wet Areas" },
+      "Pool Surround & Concourse Repairs",
+      "Accessibility Upgrades (Ramps, Handrails, Thresholds)",
+      { heading: "Hazardous Materials" },
+      "Asbestos Make-Safe & Licensed Removal Coordination",
+      "Essential Safety Measure Rectification",
     ],
   },
 ];
@@ -104,13 +125,17 @@ const Services = () => {
               variants={cardVariants}
               className="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_18px_45px_rgba(15,23,42,0.10)]"
             >
-              <div className="relative block aspect-[16/9] overflow-hidden bg-gray-100 lg:aspect-[4/3]">
+              <div className="relative h-64 overflow-hidden bg-slate-50 sm:h-72">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   sizes="(max-width: 1023px) 100vw, 33vw"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.02] ${
+                    service.imageFit === "contain"
+                      ? "object-contain p-2"
+                      : "object-cover"
+                  }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950/35 via-transparent to-transparent" />
               </div>
@@ -131,12 +156,21 @@ const Services = () => {
                 </div>
 
                 <ul className="mt-6 space-y-3 text-base leading-7 text-gray-700">
-                  {service.items.map((item) => (
-                    <li key={item} className="flex gap-2.5">
-                      <FaCircleCheck className="mt-1 h-4 w-4 shrink-0 text-sky-700" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
+                  {service.items.map((item) =>
+                    item.heading ? (
+                      <li
+                        key={item.heading}
+                        className="pt-3 text-sm font-bold uppercase tracking-wide text-gray-950 first:pt-0"
+                      >
+                        {item.heading}
+                      </li>
+                    ) : (
+                      <li key={item} className="flex gap-2.5">
+                        <FaCircleCheck className="mt-1 h-4 w-4 shrink-0 text-sky-700" />
+                        <span>{item}</span>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </motion.article>
