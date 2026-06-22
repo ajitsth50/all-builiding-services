@@ -216,6 +216,23 @@ const additionalDuplexImages = Array.from(
     `/projects/new-duplex/new-duplex-${String(index + 24).padStart(2, "0")}.jpg`
 );
 
+const awningPostReplacementImages = Array.from(
+  { length: 14 },
+  (_, index) =>
+    `/projects/awning-post-replacement/awning-post-replacement-${String(
+      index + 1
+    ).padStart(2, "0")}.jpg`
+);
+
+const facadeRepairImages = Array.from(
+  { length: 14 },
+  (_, index) =>
+    `/projects/facade-repair/facade-repair-${String(index + 1).padStart(
+      2,
+      "0"
+    )}.jpg`
+);
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -224,6 +241,16 @@ const projects = [
     title: "Office Fit-Out",
     category: "Renovation & Fit-Out",
     images: officeFitOutImages,
+  },
+  {
+    title: "Awning Posts Replacement",
+    category: "Remedial",
+    images: awningPostReplacementImages,
+  },
+  {
+    title: "Facade Repair",
+    category: "Remedial",
+    images: facadeRepairImages,
   },
   {
     title: "Timber Fence",
@@ -310,6 +337,7 @@ const projects = [
     title: "Driveway concreting",
     category: "Concreting",
     images: [
+      drivewayconcreting11,
       drivewayconcreting1,
       drivewayconcreting2,
       drivewayconcreting3,
@@ -320,7 +348,6 @@ const projects = [
       drivewayconcreting8,
       drivewayconcreting9,
       drivewayconcreting10,
-      drivewayconcreting11,
       drivewayconcreting12,
       drivewayconcreting13,
     ],
