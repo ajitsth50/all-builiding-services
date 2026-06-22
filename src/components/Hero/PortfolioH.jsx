@@ -235,11 +235,31 @@ const facadeRepairImages = Array.from(
 
 const additionalTimberFenceImages = Array.from(
   { length: 10 },
+  (_, index) => index + 5
+)
+  .filter((imageNumber) => imageNumber !== 6)
+  .map(
+    (imageNumber) =>
+      `/projects/timber-fence/timber-fence-${String(imageNumber).padStart(
+        2,
+        "0"
+      )}.jpg`
+);
+
+const fireDoorReplacementImages = Array.from(
+  { length: 16 },
   (_, index) =>
-    `/projects/timber-fence/timber-fence-${String(index + 5).padStart(
-      2,
-      "0"
-    )}.jpg`
+    `/projects/fire-door-replacement/fire-door-replacement-${String(
+      index + 1
+    ).padStart(2, "0")}.jpg`
+);
+
+const fireWindowReplacementImages = Array.from(
+  { length: 24 },
+  (_, index) =>
+    `/projects/fire-window-replacement/fire-window-replacement-${String(
+      index + 1
+    ).padStart(2, "0")}.jpg`
 );
 
 /* ------------------------------
@@ -262,9 +282,20 @@ const projects = [
     images: facadeRepairImages,
   },
   {
+    title: "Fire Door Replacement",
+    category: "Compliance",
+    images: fireDoorReplacementImages,
+  },
+  {
+    title: "Fire Window Replacement",
+    category: "Compliance",
+    images: fireWindowReplacementImages,
+  },
+  {
     title: "Timber Fence",
     category: "Fencing",
     images: [
+      "/projects/timber-fence/timber-fence-06.jpg",
       timberfence1,
       timberfence2,
       timberfence3,
@@ -315,11 +346,11 @@ const projects = [
     title: "Beam replacement",
     category: "Carpentry",
     images: [
+      beamreplacement5,
       beamreplacement1,
       beamreplacement2,
       beamreplacement3,
       beamreplacement4,
-      beamreplacement5,
       beamreplacement6,
       beamreplacement7,
       beamreplacement8,
@@ -371,9 +402,9 @@ const projects = [
     title: "Brick Wall Crack Stitch",
     category: "Remedial",
     images: [
+      brickwallcrackstitch3,
       brickwallcrackstitch1,
       brickwallcrackstitch2,
-      brickwallcrackstitch3,
       brickwallcrackstitch4,
       brickwallcrackstitch5,
       brickwallcrackstitch6,
@@ -397,10 +428,10 @@ const projects = [
     title: "New Duplex built",
     category: "Construction",
     images: [
+      newduplexbuilt4,
       newduplexbuilt1,
       newduplexbuilt2,
       newduplexbuilt3,
-      newduplexbuilt4,
       newduplexbuilt5,
       newduplexbuilt6,
       newduplexbuilt7,
@@ -427,6 +458,7 @@ const projects = [
     title: "Painting",
     category: "Finishes",
     images: [
+      painting10,
       painting1,
       painting2,
       painting3,
@@ -436,14 +468,13 @@ const projects = [
       painting7,
       painting8,
       painting9,
-      painting10,
       painting11,
     ],
   },
   {
     title: "Gyprock",
     category: "Finishes",
-    images: [gyprock1, gyprock2, gyprock3, gyprock4, gyprock5, gyprock6, gyprock7],
+    images: [gyprock3, gyprock1, gyprock2, gyprock4, gyprock5, gyprock6, gyprock7],
   },
   {
     title: "Epoxy Grout",
@@ -471,6 +502,7 @@ const projects = [
     title: "Aluminium Fence",
     category: "Fencing",
     images: [
+      aluminiumfence6,
       allu1,
       allu2,
       allu3,
@@ -480,7 +512,6 @@ const projects = [
       aluminiumfence3,
       aluminiumfence4,
       aluminiumfence5,
-      aluminiumfence6,
       aluminiumfence7,
       aluminiumfence8,
       aluminiumfence9,
