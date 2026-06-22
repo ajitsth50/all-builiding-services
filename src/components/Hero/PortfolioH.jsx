@@ -200,10 +200,31 @@ import newduplexbuilt21 from "../../assets/portfolio/newduplexbuilt21.jpg";
 import newduplexbuilt22 from "../../assets/portfolio/newduplexbuilt22.jpg";
 import newduplexbuilt23 from "../../assets/portfolio/newduplexbuilt23.jpg";
 
+const officeFitOutImages = Array.from({ length: 48 }, (_, index) => {
+  const imageNumber = index + 1;
+  const extension = imageNumber === 25 ? "avif" : "jpg";
+
+  return `/projects/office-fit-out/office-fit-out-${String(imageNumber).padStart(
+    2,
+    "0"
+  )}.${extension}`;
+});
+
+const additionalDuplexImages = Array.from(
+  { length: 10 },
+  (_, index) =>
+    `/projects/new-duplex/new-duplex-${String(index + 24).padStart(2, "0")}.jpg`
+);
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
 const projects = [
+  {
+    title: "Office Fit-Out",
+    category: "Renovation & Fit-Out",
+    images: officeFitOutImages,
+  },
   {
     title: "Timber Fence",
     category: "Fencing",
@@ -357,6 +378,7 @@ const projects = [
       newduplexbuilt21,
       newduplexbuilt22,
       newduplexbuilt23,
+      ...additionalDuplexImages,
     ],
   },
   {
@@ -484,7 +506,7 @@ const ProjectCard = ({ project, priority = false }) => {
           ))}
         </motion.div>
 
-        {total > 1 && (
+        {total > 1 && total <= 12 && (
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
             {validImages.map((_, i) => (
               <span
@@ -494,6 +516,12 @@ const ProjectCard = ({ project, priority = false }) => {
                 }`}
               />
             ))}
+          </div>
+        )}
+
+        {total > 12 && (
+          <div className="absolute bottom-2 right-2 rounded-full bg-gray-950/75 px-2.5 py-1 text-xs font-semibold text-white">
+            {slide + 1} / {total}
           </div>
         )}
       </div>

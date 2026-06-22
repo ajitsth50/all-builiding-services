@@ -125,6 +125,19 @@ const Footer = () => {
                   Level 1, 63-73 Ann Street, Surry Hills, NSW 2010
                 </span>
               </p>
+
+              <div className="border-t border-white/10 pt-3 leading-relaxed">
+                <p>
+                  <span className="font-semibold text-white">Builder Licence:</span>{" "}
+                  364306C
+                </p>
+                <p className="mt-1">
+                  <span className="font-semibold text-white">
+                    Registered Building Practitioner Licence:
+                  </span>{" "}
+                  BUP 4254025
+                </p>
+              </div>
             </div>
 
             <div className="flex gap-3 pt-3 text-white text-lg">
