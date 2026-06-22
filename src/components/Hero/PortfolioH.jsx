@@ -233,6 +233,15 @@ const facadeRepairImages = Array.from(
     )}.jpg`
 );
 
+const additionalTimberFenceImages = Array.from(
+  { length: 10 },
+  (_, index) =>
+    `/projects/timber-fence/timber-fence-${String(index + 5).padStart(
+      2,
+      "0"
+    )}.jpg`
+);
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -255,7 +264,13 @@ const projects = [
   {
     title: "Timber Fence",
     category: "Fencing",
-    images: [timberfence1, timberfence2, timberfence3, timberfence4],
+    images: [
+      timberfence1,
+      timberfence2,
+      timberfence3,
+      timberfence4,
+      ...additionalTimberFenceImages,
+    ],
   },
   {
     title: "Waterproofing",
