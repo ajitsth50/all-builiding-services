@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -20,7 +21,7 @@ const Footer = () => {
         transition={{ duration: 0.35, ease: "easeOut" }}
         className="max-w-7xl mx-auto"
       >
-        <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-10 md:grid-cols-2 md:pb-12 lg:grid-cols-[1.15fr_1fr_1fr] lg:gap-12">
+        <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-10 md:grid-cols-2 md:pb-12 lg:grid-cols-[1.15fr_1fr_1fr_0.85fr] lg:gap-12">
           <div className="space-y-5">
             <p className="font-montserrat text-2xl font-extrabold leading-tight tracking-tight md:text-3xl">
               All Building & Property Services
@@ -170,6 +171,22 @@ const Footer = () => {
               >
                 <FaLinkedin />
               </a>
+            </div>
+          </div>
+
+          <div className="space-y-4 min-w-0">
+            <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white font-montserrat">
+              Related Parties
+            </h2>
+
+            <div className="inline-flex rounded-md bg-white p-3">
+              <Image
+                src="/assets/tbpm-related-party.jpg"
+                alt="TBPM Total Building & Property Management"
+                width={150}
+                height={150}
+                className="h-28 w-28 object-contain"
+              />
             </div>
           </div>
         </div>
