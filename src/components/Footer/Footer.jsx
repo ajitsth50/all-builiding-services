@@ -80,9 +80,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="transition-colors hover:text-white break-words">
-                  <Link href="/privacy-policy">
-                    Privacy Policy – All Building and Property Services Pty Ltd
-                  </Link>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
                 </li>
                 <li className="transition-colors hover:text-white break-words">
                   <Link href="/terms-quote">Terms & Conditions – Quote</Link>
