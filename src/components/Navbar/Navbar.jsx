@@ -94,7 +94,7 @@ const Navbar = () => {
             <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-md border border-gray-300 bg-white shadow-sm">
               <Image
                 src={logo}
-                alt="All Building and Property Services logo"
+                alt="All Building and Property Services"
                 className="h-12 w-12 object-contain"
                 sizes="48px"
                 priority
