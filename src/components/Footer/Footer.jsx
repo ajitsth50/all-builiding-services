@@ -179,7 +179,13 @@ const Footer = () => {
               Related Parties
             </h2>
 
-            <div className="flex max-w-xs items-center gap-4 rounded-md bg-white p-3 text-gray-950">
+            <a
+              href="https://www.tbpm.com.au"
+              target="_blank"
+              rel="noreferrer"
+              className="flex max-w-xs items-center gap-4 rounded-md bg-white p-3 text-gray-950 transition hover:bg-sky-50 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 focus:ring-offset-sky-950"
+              aria-label="Visit Total Building and Property Management website"
+            >
               <Image
                 src="/assets/tbpm-related-party.jpg"
                 alt="TBPM Total Building & Property Management"
@@ -190,7 +196,7 @@ const Footer = () => {
               <p className="font-montserrat text-sm font-bold leading-snug">
                 Total Building and Property Management
               </p>
-            </div>
+            </a>
           </div>
         </div>
 
