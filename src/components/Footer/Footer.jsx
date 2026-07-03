@@ -179,14 +179,17 @@ const Footer = () => {
               Related Parties
             </h2>
 
-            <div className="inline-flex rounded-md bg-white p-3">
+            <div className="flex max-w-xs items-center gap-4 rounded-md bg-white p-3 text-gray-950">
               <Image
                 src="/assets/tbpm-related-party.jpg"
                 alt="TBPM Total Building & Property Management"
                 width={150}
                 height={150}
-                className="h-28 w-28 object-contain"
+                className="h-20 w-20 flex-shrink-0 object-contain"
               />
+              <p className="font-montserrat text-sm font-bold leading-snug">
+                Total Building and Property Management
+              </p>
             </div>
           </div>
         </div>
