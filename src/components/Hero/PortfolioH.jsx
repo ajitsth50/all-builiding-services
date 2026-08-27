@@ -262,14 +262,17 @@ const fireWindowReplacementImages = Array.from(
     ).padStart(2, "0")}.jpg`
 );
 
-const concreteCancerImages = Array.from(
-  { length: 18 },
-  (_, index) =>
-    `/projects/concrete-cancer/concrete-cancer-${String(index + 1).padStart(
-      2,
-      "0"
-    )}.jpg`
-);
+const concreteCancerImages = [
+  "/projects/concrete-cancer/concrete-cancer-18.jpg",
+  ...Array.from(
+    { length: 17 },
+    (_, index) =>
+      `/projects/concrete-cancer/concrete-cancer-${String(index + 1).padStart(
+        2,
+        "0"
+      )}.jpg`
+  ),
+];
 
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
