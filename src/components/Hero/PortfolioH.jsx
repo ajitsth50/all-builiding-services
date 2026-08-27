@@ -262,6 +262,15 @@ const fireWindowReplacementImages = Array.from(
     ).padStart(2, "0")}.jpg`
 );
 
+const concreteCancerImages = Array.from(
+  { length: 18 },
+  (_, index) =>
+    `/projects/concrete-cancer/concrete-cancer-${String(index + 1).padStart(
+      2,
+      "0"
+    )}.jpg`
+);
+
 /* ------------------------------
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
@@ -280,6 +289,11 @@ const projects = [
     title: "Facade Repair",
     category: "Remedial",
     images: facadeRepairImages,
+  },
+  {
+    title: "Concrete Cancer",
+    category: "Remedial",
+    images: concreteCancerImages,
   },
   {
     title: "Fire Door Replacement",
