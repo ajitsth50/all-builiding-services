@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173f35">
+  <title>Trade Portal | All Building Services</title>
+  <meta name="description" content="All Building Services trade portal for work orders, quotation requests, scope documents and site instructions.">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="auth-pending">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <section class="login-screen" id="loginScreen" aria-labelledby="loginTitle">
+    <form class="login-card" id="loginForm">
+      <span class="brand-mark login-mark" aria-hidden="true">ABS</span>
+      <p class="eyebrow">All Building Services</p>
+      <h1 id="loginTitle">Trade Portal</h1>
+      <p class="login-intro">Secure access for authorised administrators.</p>
+      <label>Email address<input id="loginEmail" name="email" type="email" autocomplete="username" value="admin@allbuildingservices.com.au" required></label>
+      <label>Password<input id="loginPassword" name="password" type="password" autocomplete="current-password" required></label>
+      <p class="login-error hidden" id="loginError" role="alert"></p>
+      <button class="btn primary login-submit" type="submit">Sign in securely</button>
+      <small>Protected with an encrypted, HTTP-only session.</small>
+    </form>
+  </section>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">TD</span>
+        <span><strong>ABS Trade Portal</strong><small>All Building Services</small></span>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="overview"><span class="icon" data-icon="grid"></span>Overview</button>
+        <button class="nav-item" data-view="work"><span class="icon" data-icon="clipboard"></span>Work orders <span class="nav-count">8</span></button>
+        <button class="nav-item" data-view="rfqs"><span class="icon" data-icon="quote"></span>RFQs <span class="nav-count">4</span></button>
+        <button class="nav-item" data-view="documents"><span class="icon" data-icon="file"></span>Documents</button>
+        <button class="nav-item" data-view="subcontractors"><span class="icon" data-icon="users"></span>Subcontractors</button>
+        <button class="nav-item" data-view="activity"><span class="icon" data-icon="history"></span>Audit history</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="help-card"><span class="icon" data-icon="shield"></span><strong>Audit-ready records</strong><p>Every status change and response is time-stamped.</p></div>
+        <button class="profile" id="logoutBtn"><span class="avatar">AD</span><span><strong>Administrator</strong><small>Sign out</small></span><span class="icon" data-icon="chevron"></span></button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Open navigation"><span class="icon" data-icon="menu"></span></button>
+        <div class="crumb"><span>Operations</span><span>/</span><strong id="pageCrumb">Overview</strong></div>
+        <div class="top-actions">
+          <label class="search"><span class="icon" data-icon="search"></span><span class="sr-only">Search jobs</span><input id="globalSearch" type="search" placeholder="Search jobs, sites, trades…"></label>
+          <button class="icon-btn notification-btn" aria-label="Notifications"><span class="icon" data-icon="bell"></span><span class="alert-dot"></span></button>
+          <button class="btn primary" id="newRfqBtn"><span class="icon" data-icon="plus"></span>New RFQ</button>
+        </div>
+      </header>
+
+      <section class="page" data-page="overview">
+        <div class="page-heading">
+          <div><p class="eyebrow">Monday, 22 September</p><h1>Good morning, Alex</h1><p>Here’s what needs attention across your subcontractor network.</p></div>
+          <button class="btn secondary" id="sharePortalBtn"><span class="icon" data-icon="link"></span>Copy portal link</button>
+        </div>
+
+        <div class="attention-banner"><span class="attention-icon"><span class="icon" data-icon="clock"></span></span><div><strong>3 items need your attention today</strong><p>Two quotes are due and one work order is waiting for approval.</p></div><button class="text-btn" data-jump="rfqs">Review now <span aria-hidden="true">→</span></button></div>
+
+        <div class="metrics" aria-label="Key metrics">
+          <article class="metric"><span class="metric-icon green"><span class="icon" data-icon="clipboard"></span></span><div><p>Active work orders</p><strong>18</strong><small><span class="up">↑ 12%</span> from last month</small></div><span class="spark"><i></i><i></i><i></i><i></i><i></i><i></i></span></article>
+          <article class="metric"><span class="metric-icon blue"><span class="icon" data-icon="quote"></span></span><div><p>RFQs awaiting quote</p><strong>7</strong><small>2 due today</small></div><span class="spark blue-bars"><i></i><i></i><i></i><i></i><i></i><i></i></span></article>
+          <article class="metric"><span class="metric-icon amber"><span class="icon" data-icon="clock"></span></span><div><p>Due this week</p><strong>6</strong><small>Across 4 sites</small></div><span class="mini-ring">67%</span></article>
+          <article class="metric"><span class="metric-icon purple"><span class="icon" data-icon="users"></span></span><div><p>Active subcontractors</p><strong>24</strong><small><span class="up">3 new</span> this month</small></div><div class="avatar-stack"><span>JC</span><span>MP</span><span>RS</span><span>+21</span></div></article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel jobs-panel"><div class="panel-head"><div><h2>Priority jobs</h2><p>Closest due dates and pending responses</p></div><button class="text-btn" data-jump="work">View all</button></div><div class="table-wrap"><table><thead><tr><th>Job / site</th><th>Assigned to</th><th>Status</th><th>Due</th><th></th></tr></thead><tbody id="priorityTable"></tbody></table></div></section>
+          <aside class="panel activity-panel"><div class="panel-head"><div><h2>Recent activity</h2><p>Latest portal events</p></div><button class="icon-btn" aria-label="More activity options"><span class="icon" data-icon="more"></span></button></div><div class="timeline" id="recentActivity"></div><button class="activity-link" data-jump="activity">View full audit history <span aria-hidden="true">→</span></button></aside>
+        </div>
+      </section>
+
+      <section class="page hidden" data-page="work">
+        <div class="page-heading"><div><p class="eyebrow">Delivery</p><h1>Work orders</h1><p>Assign work, track site instructions and keep delivery moving.</p></div><button class="btn primary" data-open-work-order><span class="icon" data-icon="plus"></span>New work order</button></div>
+        <div class="filter-row"><label class="search wide"><span class="icon" data-icon="search"></span><span class="sr-only">Search work orders</span><input class="table-search" type="search" placeholder="Search work orders"></label><select class="status-filter" aria-label="Filter status"><option value="all">All statuses</option><option>In progress</option><option>Awaiting response</option><option>Scheduled</option><option>Complete</option></select></div>
+        <section class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>Reference</th><th>Work order / site</th><th>Subcontractor</th><th>Status</th><th>Due</th><th></th></tr></thead><tbody id="workTable"></tbody></table></div></section>
+      </section>
+
+      <section class="page hidden" data-page="rfqs">
+        <div class="page-heading"><div><p class="eyebrow">Procurement</p><h1>Requests for quotation</h1><p>Issue clear scopes, compare responses and award work.</p></div><button class="btn primary" data-open-modal><span class="icon" data-icon="plus"></span>New RFQ</button></div>
+        <div class="rfq-tabs" role="tablist"><button class="active" data-rfq-filter="all">All <span>4</span></button><button data-rfq-filter="Awaiting quote">Awaiting quote <span>2</span></button><button data-rfq-filter="Quote received">Quote received <span>1</span></button><button data-rfq-filter="Awarded">Awarded <span>1</span></button></div>
+        <div class="rfq-grid" id="rfqGrid"></div>
+      </section>
+
+      <section class="page hidden" data-page="documents"><div class="page-heading"><div><p class="eyebrow">Document control</p><h1>Scopes & attachments</h1><p>Keep approved scopes, plans and site files against each job.</p></div><label class="btn primary upload-label"><input id="fileUpload" type="file" multiple><span class="icon" data-icon="upload"></span>Upload files</label></div><div class="document-grid" id="documentGrid"></div></section>
+      <section class="page hidden" data-page="subcontractors"><div class="page-heading"><div><p class="eyebrow">Network</p><h1>Subcontractors</h1><p>Trade coverage, compliance status and current workload.</p></div><button class="btn primary" id="inviteBtn"><span class="icon" data-icon="plus"></span>Invite subcontractor</button></div><div class="contractor-grid" id="contractorGrid"></div></section>
+      <section class="page hidden" data-page="activity"><div class="page-heading"><div><p class="eyebrow">Governance</p><h1>Audit history</h1><p>A searchable, time-stamped record of every portal action.</p></div><button class="btn secondary" id="exportAudit"><span class="icon" data-icon="download"></span>Export CSV</button></div><section class="panel"><div class="audit-list" id="auditList"></div></section></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="workOrderModal" role="dialog" aria-modal="true" aria-labelledby="workOrderModalTitle">
+    <form class="modal" id="workOrderForm">
+      <div class="modal-head"><div><p class="eyebrow">New instruction</p><h2 id="workOrderModalTitle">Create a work order</h2></div><button class="icon-btn" type="button" data-close-work-order aria-label="Close"><span class="icon" data-icon="close"></span></button></div>
+      <div class="stepper"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span><small>Job details</small><small>Instructions</small><small>Issue</small></div>
+      <div class="form-grid">
+        <label class="full">Work-order title *<input name="title" required placeholder="e.g. Replace failed balcony membrane"></label>
+        <label>Site *<input name="site" required placeholder="Property or site address"></label>
+        <label>Assign subcontractor *<select name="contractor" required><option value="">Select subcontractor</option><option>Coastal Waterproofing</option><option>JCM Electrical</option><option>Metro Paint Co.</option><option>BuildRight Carpentry</option><option>RainGuard Roofing</option><option>BuildSafe Projects</option></select></label>
+        <label>Required completion date *<input name="due" type="date" required></label>
+        <label>Starting status *<select name="status" required><option>Awaiting response</option><option>Scheduled</option><option>In progress</option></select></label>
+        <label class="full">Scope and site instructions *<textarea name="instructions" required rows="6" placeholder="Describe the works, access arrangements, safety requirements, inclusions and completion evidence…"></textarea></label>
+        <label class="full">Attachments<input name="attachments" type="file" multiple><small>Attach scope documents, plans, photos or site instructions.</small></label>
+      </div>
+      <div class="modal-note"><span class="icon" data-icon="mail"></span><span><strong>Work-order notification</strong><small>The assigned subcontractor will receive accept and decline links.</small></span></div>
+      <div class="modal-actions"><button class="btn secondary" type="button" data-close-work-order>Cancel</button><button class="btn primary" type="submit"><span class="icon" data-icon="send"></span>Create & issue work order</button></div>
+    </form>
+  </div>
+
+  <div class="modal-backdrop hidden" id="rfqModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <form class="modal" id="rfqForm"><div class="modal-head"><div><p class="eyebrow">New request</p><h2 id="modalTitle">Create an RFQ</h2></div><button class="icon-btn" type="button" data-close-modal aria-label="Close"><span class="icon" data-icon="close"></span></button></div>
+      <div class="stepper"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span><small>Details</small><small>Scope</small><small>Send</small></div>
+      <div class="form-grid"><label class="full">RFQ title *<input name="title" required placeholder="e.g. Balcony membrane replacement"></label><label>Site *<input name="site" required placeholder="Property or site address"></label><label>Trade *<select name="trade" required><option value="">Select trade</option><option>Waterproofing</option><option>Electrical</option><option>Painting</option><option>Carpentry</option></select></label><label>Quote due *<input name="due" type="date" required></label><label>Invite subcontractor *<select name="contractor" required><option>Coastal Waterproofing</option><option>JCM Electrical</option><option>Metro Paint Co.</option><option>BuildRight Carpentry</option></select></label><label class="full">Scope and site instructions *<textarea name="scope" required rows="5" placeholder="Describe the works, access requirements, exclusions and deliverables…"></textarea></label></div>
+      <div class="modal-note"><span class="icon" data-icon="mail"></span><span><strong>Email notification preview</strong><small>The subcontractor will receive accept, decline and submit-quote links.</small></span><button type="button" class="text-btn" id="previewLink">Preview link</button></div>
+      <div class="modal-actions"><button class="btn secondary" type="button" data-close-modal>Cancel</button><button class="btn primary" type="submit"><span class="icon" data-icon="send"></span>Create & send RFQ</button></div>
+    </form>
+  </div>
+
+  <div class="modal-backdrop hidden" id="responseModal" role="dialog" aria-modal="true" aria-labelledby="responseTitle"><div class="modal response-modal"><div class="modal-head"><div><p class="eyebrow">Subcontractor link preview</p><h2 id="responseTitle">Respond to RFQ</h2></div><button class="icon-btn" data-close-response aria-label="Close"><span class="icon" data-icon="close"></span></button></div><div class="response-hero"><span class="brand-mark">ABS</span><p>Invitation from All Building Services</p><h3 id="responseJob">Balcony membrane replacement</h3><small id="responseMeta">RFQ-2048 · Quote due 24 Sep 2026</small></div><div class="scope-preview"><span>Scope summary</span><p>Review the attached scope, confirm availability and submit a lump-sum quote with lead time and exclusions.</p><button class="file-row"><span class="file-type">PDF</span><span><strong>Scope_of_Works.pdf</strong><small>2.4 MB</small></span><span class="icon" data-icon="download"></span></button></div><div class="quote-fields hidden" id="quoteFields"><label>Quote amount (AUD)<input id="quoteAmount" type="number" min="0" placeholder="0.00"></label><label>Estimated start date<input type="date"></label><label>Notes<textarea rows="3" placeholder="Clarifications, exclusions or lead time"></textarea></label></div><div class="response-actions"><button class="btn danger" data-response="Declined">Decline</button><button class="btn secondary" data-response="Accepted">Accept invitation</button><button class="btn primary" id="submitQuoteBtn">Submit quote</button></div></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="icon" data-icon="check"></span><span id="toastText">Saved</span></div>
+  <script src="portal.js"></script>
+</body>
+</html>
