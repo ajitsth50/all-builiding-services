@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#173f35">
   <title>Trade Portal | All Building Services</title>
   <meta name="description" content="All Building Services trade portal for work orders, quotation requests, scope documents and site instructions.">
-  <link rel="stylesheet" href="portal.css">
+  <link rel="stylesheet" href="/trade/portal.css">
 </head>
 <body class="auth-pending">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -123,6 +123,6 @@
   <div class="modal-backdrop hidden" id="responseModal" role="dialog" aria-modal="true" aria-labelledby="responseTitle"><div class="modal response-modal"><div class="modal-head"><div><p class="eyebrow">Subcontractor link preview</p><h2 id="responseTitle">Respond to RFQ</h2></div><button class="icon-btn" data-close-response aria-label="Close"><span class="icon" data-icon="close"></span></button></div><div class="response-hero"><span class="brand-mark">ABS</span><p>Invitation from All Building Services</p><h3 id="responseJob">Balcony membrane replacement</h3><small id="responseMeta">RFQ-2048 · Quote due 24 Sep 2026</small></div><div class="scope-preview"><span>Scope summary</span><p>Review the attached scope, confirm availability and submit a lump-sum quote with lead time and exclusions.</p><button class="file-row"><span class="file-type">PDF</span><span><strong>Scope_of_Works.pdf</strong><small>2.4 MB</small></span><span class="icon" data-icon="download"></span></button></div><div class="quote-fields hidden" id="quoteFields"><label>Quote amount (AUD)<input id="quoteAmount" type="number" min="0" placeholder="0.00"></label><label>Estimated start date<input type="date"></label><label>Notes<textarea rows="3" placeholder="Clarifications, exclusions or lead time"></textarea></label></div><div class="response-actions"><button class="btn danger" data-response="Declined">Decline</button><button class="btn secondary" data-response="Accepted">Accept invitation</button><button class="btn primary" id="submitQuoteBtn">Submit quote</button></div></div></div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"><span class="icon" data-icon="check"></span><span id="toastText">Saved</span></div>
-  <script src="portal.js"></script>
+  <script src="/trade/portal.js"></script>
 </body>
 </html>
