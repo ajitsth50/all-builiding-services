@@ -26,13 +26,13 @@
   <div class="app-shell">
     <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
       <div class="brand">
-        <span class="brand-mark" aria-hidden="true">TD</span>
+        <img class="brand-logo" src="/assets/logo.png" alt="All Building and Property Services" />
         <span><strong>ABPS Trade Portal</strong><small>All Building and Property Services Pty Ltd</small></span>
       </div>
       <nav>
         <button class="nav-item active" data-view="overview"><span class="icon" data-icon="grid"></span>Overview</button>
-        <button class="nav-item" data-view="work"><span class="icon" data-icon="clipboard"></span>Work orders <span class="nav-count">8</span></button>
-        <button class="nav-item" data-view="rfqs"><span class="icon" data-icon="quote"></span>RFQs <span class="nav-count">4</span></button>
+        <button class="nav-item" data-view="work"><span class="icon" data-icon="clipboard"></span>Work orders <span class="nav-count">0</span></button>
+        <button class="nav-item" data-view="rfqs"><span class="icon" data-icon="quote"></span>RFQs <span class="nav-count">0</span></button>
         <button class="nav-item" data-view="documents"><span class="icon" data-icon="file"></span>Documents</button>
         <button class="nav-item" data-view="subcontractors"><span class="icon" data-icon="users"></span>Subcontractors</button>
         <button class="nav-item" data-view="activity"><span class="icon" data-icon="history"></span>Audit history</button>
@@ -56,7 +56,7 @@
 
       <section class="page" data-page="overview">
         <div class="page-heading">
-          <div><p class="eyebrow">Monday, 22 September</p><h1>Good morning, Alex</h1><p>Here’s what needs attention across your subcontractor network.</p></div>
+          <div><p class="eyebrow">Monday, 22 September</p><h1>Good morning, Ajit</h1><p>Here’s what needs attention across your subcontractor network.</p></div>
           <button class="btn secondary" id="sharePortalBtn"><span class="icon" data-icon="link"></span>Copy portal link</button>
         </div>
 
@@ -83,11 +83,11 @@
 
       <section class="page hidden" data-page="rfqs">
         <div class="page-heading"><div><p class="eyebrow">Procurement</p><h1>Requests for quotation</h1><p>Issue clear scopes, compare responses and award work.</p></div><button class="btn primary" data-open-modal><span class="icon" data-icon="plus"></span>New RFQ</button></div>
-        <div class="rfq-tabs" role="tablist"><button class="active" data-rfq-filter="all">All <span>4</span></button><button data-rfq-filter="Awaiting quote">Awaiting quote <span>2</span></button><button data-rfq-filter="Quote received">Quote received <span>1</span></button><button data-rfq-filter="Awarded">Awarded <span>1</span></button></div>
+        <div class="rfq-tabs" role="tablist"><button class="active" data-rfq-filter="all">All <span>0</span></button><button data-rfq-filter="Awaiting quote">Awaiting quote <span>0</span></button><button data-rfq-filter="Quote received">Quote received <span>0</span></button><button data-rfq-filter="Awarded">Awarded <span>0</span></button></div>
         <div class="rfq-grid" id="rfqGrid"></div>
       </section>
 
-      <section class="page hidden" data-page="documents"><div class="page-heading"><div><p class="eyebrow">Document control</p><h1>Scopes & attachments</h1><p>Keep approved scopes, plans and site files against each job.</p></div><label class="btn primary upload-label"><input id="fileUpload" type="file" multiple><span class="icon" data-icon="upload"></span>Upload files</label></div><div class="document-grid" id="documentGrid"></div></section>
+      <section class="page hidden" data-page="documents"><div class="page-heading"><div><p class="eyebrow">Document control</p><h1>Scopes & attachments</h1><p>Keep approved scopes, plans and site files against each job.</p></div><div class="top-actions"><a class="btn secondary" href="https://allbuilding2050-my.sharepoint.com/:f:/g/personal/admin_allbuildingservices_com_au/IgDen5KsABgrSKAQJIG__SoZAaLgZ00GbmgfOPh7Sm4vVl4?e=d5C6ef" target="_blank" rel="noopener">Open OneDrive library</a><label class="btn primary upload-label"><input id="fileUpload" type="file" multiple><span class="icon" data-icon="upload"></span>Upload files</label></div></div><div class="document-grid" id="documentGrid"></div></section>
       <section class="page hidden" data-page="subcontractors"><div class="page-heading"><div><p class="eyebrow">Network</p><h1>Subcontractors</h1><p>Trade coverage, compliance status and current workload.</p></div><button class="btn primary" id="inviteBtn"><span class="icon" data-icon="plus"></span>Invite subcontractor</button></div><div class="contractor-grid" id="contractorGrid"></div></section>
       <section class="page hidden" data-page="activity"><div class="page-heading"><div><p class="eyebrow">Governance</p><h1>Audit history</h1><p>A searchable, time-stamped record of every portal action.</p></div><button class="btn secondary" id="exportAudit"><span class="icon" data-icon="download"></span>Export CSV</button></div><section class="panel"><div class="audit-list" id="auditList"></div></section></section>
     </main>
