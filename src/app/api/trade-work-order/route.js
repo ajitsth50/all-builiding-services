@@ -41,7 +41,7 @@ export async function POST(request) {
   if (!email) return Response.json({ queued: true, error: "No subcontractor email is saved" }, { status: 422 });
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return Response.json({ queued: true, error: "Email provider is not configured" }, { status: 503 });
-  const from = process.env.CONTACT_FROM_EMAIL || "All Building and Property Services Pty Ltd <onboarding@resend.dev>";
+  const from = "All Building and Property Services Pty Ltd <admin@allbuildingservices.com.au>";
   const response = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ from, to: [email], reply_to: process.env.CONTACT_TO_EMAIL || "admin@allbuildingservices.com.au", subject: `Work order ${clean(body.ref)} — ${clean(body.title)}`, text: [`Hi ${clean(body.company)},`, "", `A new work order has been issued by All Building and Property Services Pty Ltd.`, `Reference: ${clean(body.ref)}`, `Site: ${clean(body.site)}`, `Due: ${clean(body.due)}`, "", "Please use the response link in the portal invitation to accept or decline the work order.", "", clean(body.instructions)].join("\n") }) });
   if (!response.ok) return Response.json({ error: "Email provider rejected the work-order notification" }, { status: 502 });
   return Response.json({ ok: true });
