@@ -262,6 +262,12 @@ const fireWindowReplacementImages = Array.from(
     ).padStart(2, "0")}.jpg`
 );
 
+const spallingRepairImages = Array.from(
+  { length: 18 },
+  (_, index) =>
+    `/projects/spalling-repair/spalling-repair-${String(index + 1).padStart(2, "0")}.jpg`
+);
+
 const concreteCancerImages = [
   "/projects/concrete-cancer/concrete-cancer-18.jpg",
   ...Array.from(
@@ -278,6 +284,11 @@ const concreteCancerImages = [
    PROJECT DATA (CLEAN, CONSISTENT)
 --------------------------------*/
 const projects = [
+  {
+    title: "Spalling Repair",
+    category: "Remedial",
+    images: spallingRepairImages,
+  },
   {
     title: "Office Fit-Out",
     category: "Renovation & Fit-Out",
